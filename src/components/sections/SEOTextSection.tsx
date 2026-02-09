@@ -166,8 +166,8 @@ export function SEOTextSection() {
                             Completely Free and No Sign-Up Required
                         </h2>
                         <p className="text-slate-400 leading-relaxed">
-                            We believe tools like this should be accessible to everyone. That's why Brat Generator is 100% free
-                            with no hidden costs or subscription fees. You don't need to create an account or provide any personal
+                            We believe tools like this should be accessible to everyone. That&apos;s why Brat Generator is 100% free
+                            with no hidden costs or subscription fees. You don&apos;t need to create an account or provide any personal
                             information. Just visit the website, create your image, and download it instantly.
                         </p>
                     </motion.section>

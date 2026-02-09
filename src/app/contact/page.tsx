@@ -21,7 +21,7 @@ export default function ContactPage() {
                         </h1>
 
                         <p className="text-slate-400 leading-relaxed mb-12">
-                            Have questions, feedback, or need help? We'd love to hear from you.
+                            Have questions, feedback, or need help? We&apos;d love to hear from you.
                         </p>
 
                         <div className="space-y-6 mb-12">
@@ -58,7 +58,7 @@ export default function ContactPage() {
                                         </h2>
                                         <p className="text-slate-400 leading-relaxed mb-3">
                                             We value your feedback! Whether you have suggestions for new features, found a bug,
-                                            or just want to share how you're using Brat Generator, we want to hear from you.
+                                            or just want to share how you&apos;re using Brat Generator, we want to hear from you.
                                         </p>
                                         <ul className="list-disc list-inside text-slate-400 space-y-1">
                                             <li>Feature requests and suggestions</li>
@@ -98,7 +98,7 @@ export default function ContactPage() {
                                 </p>
                                 <ul className="list-disc list-inside text-slate-400 space-y-2">
                                     <li>Refreshing your browser or clearing your cache</li>
-                                    <li>Ensuring you're using an up-to-date, modern web browser (Chrome, Firefox, Safari, or Edge)</li>
+                                    <li>Ensuring you&apos;re using an up-to-date, modern web browser (Chrome, Firefox, Safari, or Edge)</li>
                                     <li>Checking that JavaScript is enabled in your browser</li>
                                     <li>Trying the tool in an incognito/private browsing window</li>
                                 </ul>
@@ -120,7 +120,7 @@ export default function ContactPage() {
                                     Community & Social Media
                                 </h2>
                                 <p className="text-slate-400 leading-relaxed">
-                                    While we don't currently have official social media accounts, we love seeing how people use
+                                    While we don&apos;t currently have official social media accounts, we love seeing how people use
                                     Brat Generator! Feel free to share your creations and tag them with #BratGenerator to connect
                                     with other users.
                                 </p>

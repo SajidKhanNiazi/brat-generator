@@ -45,7 +45,7 @@ export default function TermsPage() {
                                     use the service to create content that is harmful, offensive, or violates any laws or regulations.
                                 </p>
                                 <ul className="list-disc list-inside text-slate-400 space-y-2">
-                                    <li>Do not create content that infringes on others' intellectual property rights</li>
+                                    <li>Do not create content that infringes on others&apos; intellectual property rights</li>
                                     <li>Do not use the tool for illegal purposes or to spread misinformation</li>
                                     <li>Do not attempt to harm, disrupt, or gain unauthorized access to the service</li>
                                     <li>Do not use the tool to harass, abuse, or harm others</li>
@@ -58,7 +58,7 @@ export default function TermsPage() {
                                 </h2>
                                 <p className="text-slate-400 leading-relaxed mb-3">
                                     The Brat Generator tool and website design are the intellectual property of their creators.
-                                    The tool is inspired by the aesthetic of Charli XCX's "Brat" album cover, but is not officially
+                                    The tool is inspired by the aesthetic of Charli XCX&apos;s &quot;Brat&quot; album cover, but is not officially
                                     affiliated with or endorsed by Charli XCX or any related parties.
                                 </p>
                                 <p className="text-slate-400 leading-relaxed">
@@ -73,7 +73,7 @@ export default function TermsPage() {
                                     Limitation of Liability
                                 </h2>
                                 <p className="text-slate-400 leading-relaxed mb-3">
-                                    Brat Generator is provided "as is" without any warranties of any kind, either express or implied.
+                                    Brat Generator is provided &quot;as is&quot; without any warranties of any kind, either express or implied.
                                     We do not guarantee that the service will be error-free, uninterrupted, or secure.
                                 </p>
                                 <p className="text-slate-400 leading-relaxed">

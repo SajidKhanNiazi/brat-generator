@@ -30,7 +30,7 @@ export default function DisclaimerPage() {
                                 </h2>
                                 <p className="text-slate-400 leading-relaxed mb-3">
                                     Brat Generator is a free online tool designed to create text-based images inspired by
-                                    the visual aesthetic of Charli XCX's "Brat" album cover. The tool allows users to generate
+                                    the visual aesthetic of Charli XCX&apos;s &quot;Brat&quot; album cover. The tool allows users to generate
                                     custom images featuring lowercase typography and bold background colors in a minimalist style.
                                 </p>
                                 <p className="text-slate-400 leading-relaxed">
@@ -47,11 +47,11 @@ export default function DisclaimerPage() {
                                 <p className="text-slate-400 leading-relaxed mb-3">
                                     <strong className="text-white">Important:</strong> Brat Generator is NOT officially affiliated
                                     with, endorsed by, or connected to Charli XCX, Atlantic Records, or any other official entity
-                                    associated with the "Brat" album or Charli XCX's work.
+                                    associated with the &quot;Brat&quot; album or Charli XCX&apos;s work.
                                 </p>
                                 <p className="text-slate-400 leading-relaxed mb-3">
                                     This is an independent, fan-made tool created to celebrate the iconic visual style of the
-                                    Brat album. The tool's design is inspired by the album's aesthetic, but it is not an official
+                                    Brat album. The tool&apos;s design is inspired by the album&apos;s aesthetic, but it is not an official
                                     product and should not be confused with any official merchandise or services.
                                 </p>
                                 <p className="text-slate-400 leading-relaxed">
@@ -65,7 +65,7 @@ export default function DisclaimerPage() {
                                     Limitations of Service
                                 </h2>
                                 <p className="text-slate-400 leading-relaxed mb-3">
-                                    Brat Generator is provided "as is" without any warranties or guarantees. While we strive to
+                                    Brat Generator is provided &quot;as is&quot; without any warranties or guarantees. While we strive to
                                     provide a reliable and functional service, we cannot guarantee that the tool will always be
                                     available, error-free, or meet your specific requirements.
                                 </p>

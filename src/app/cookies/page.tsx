@@ -119,7 +119,7 @@ export default function CookiePolicyPage() {
                                     How to Disable Cookies
                                 </h3>
                                 <p className="text-slate-400 leading-relaxed mb-3">
-                                    You can control and manage cookies in your browser settings. Here's how to access cookie settings
+                                    You can control and manage cookies in your browser settings. Here&apos;s how to access cookie settings
                                     in popular browsers:
                                 </p>
                                 <ul className="list-disc list-inside text-slate-400 space-y-2 mb-3">
