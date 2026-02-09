@@ -1,0 +1,26 @@
+{
+  "name": "Brat Generator - Create Charli XCX Brat Album Cover Style Images",
+  "short_name": "Brat Generator",
+  "description": "Create custom images inspired by Charli XCX's iconic 'Brat' album cover. Free online Brat Generator with custom text, colors, and instant download.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0f172a",
+  "theme_color": "#8ACE00",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "/favicon.ico",
+      "sizes": "any",
+      "type": "image/x-icon"
+    },
+    {
+      "src": "/og-image.png",
+      "sizes": "1200x630",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ],
+  "categories": ["entertainment", "utilities", "graphics"],
+  "lang": "en-US",
+  "dir": "ltr"
+}

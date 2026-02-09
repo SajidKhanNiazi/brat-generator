@@ -1,0 +1,7 @@
+export { HeroSection } from './HeroSection'
+export { ToolPreviewSection } from './ToolPreviewSection'
+export { HowToUseSection } from './HowToUseSection'
+export { FeaturesSection } from './FeaturesSection'
+export { BenefitsSection } from './BenefitsSection'
+export { SEOTextSection } from './SEOTextSection'
+export { FAQSection } from './FAQSection'

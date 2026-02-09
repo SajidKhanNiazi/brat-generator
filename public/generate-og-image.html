@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Generate OG Image</title>
+</head>
+<body>
+    <h1>OG Image Generator</h1>
+    <p>Right-click the canvas below and "Save Image As" to save as og-image.png</p>
+    <canvas id="canvas" width="1200" height="630" style="border: 1px solid #ccc;"></canvas>
+    <script>
+        const canvas = document.getElementById('canvas');
+        const ctx = canvas.getContext('2d');
+        
+        // Background - Brat green
+        ctx.fillStyle = '#8ACE00';
+        ctx.fillRect(0, 0, 1200, 630);
+        
+        // Add text
+        ctx.fillStyle = '#000000';
+        ctx.font = 'bold 80px Arial, sans-serif';
+        ctx.textAlign = 'center';
+        ctx.textBaseline = 'middle';
+        ctx.fillText('Brat Generator', 600, 250);
+        
+        ctx.font = '40px Arial, sans-serif';
+        ctx.fillText('Create Your Own Brat Album Cover', 600, 350);
+        
+        // Add download button
+        const button = document.createElement('button');
+        button.textContent = 'Download Image';
+        button.onclick = () => {
+            const link = document.createElement('a');
+            link.download = 'og-image.png';
+            link.href = canvas.toDataURL('image/png');
+            link.click();
+        };
+        document.body.appendChild(button);
+    </script>
+</body>
+</html>
