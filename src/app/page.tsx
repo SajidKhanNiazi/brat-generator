@@ -7,13 +7,7 @@ import { Footer } from '@/components/layout/Footer'
 import { Container } from '@/components/ui/Container'
 import { Button } from '@/components/ui/Button'
 import { Card } from '@/components/ui/Card'
-import {
-  HowToUseSection,
-  FeaturesSection,
-  BenefitsSection,
-  SEOTextSection,
-  FAQSection,
-} from '@/components/sections'
+import { SEOTextSection } from '@/components/sections'
 import {
   generateBratImage,
   downloadBratImage,
@@ -21,7 +15,7 @@ import {
   colorPresets,
   ColorPresetKey,
 } from '@/lib/bratGenerator'
-import { Download, Share2, Palette, Type, Sparkles, Check, ArrowDown, Droplet, Paintbrush } from 'lucide-react'
+import { Download, Share2, Palette, Type, Sparkles, Check, Droplet, Paintbrush } from 'lucide-react'
 
 export default function HomePage() {
   const canvasRef = useRef<HTMLCanvasElement>(null)
@@ -147,12 +141,12 @@ export default function HomePage() {
               <h1 className="font-display text-3xl sm:text-4xl lg:text-5xl font-bold leading-tight mb-4">
                 <span className="text-white">Brat Generator – </span>
                 <span className="bg-clip-text text-transparent bg-gradient-to-r from-[#8ACE00] via-lime-400 to-green-400">
-                  Create Stylish Brat Text Instantly
+                  Create Bold Brat Text & Images Online
                 </span>
               </h1>
 
               <p className="text-lg text-slate-400 max-w-2xl mx-auto">
-                Create custom images inspired by Charli XCX&apos;s iconic &quot;Brat&quot; album cover. 
+                Create custom images inspired by Charli XCX&apos;s iconic &quot;Brat&quot; album cover.
                 Enter your text, customize colors, and download instantly.
               </p>
             </motion.div>
@@ -166,7 +160,7 @@ export default function HomePage() {
             >
               <Card className="p-6 sm:p-8 lg:p-10" hover={false}>
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12">
-                  
+
                   {/* Left: Controls */}
                   <div className="space-y-6 order-2 lg:order-1">
                     {/* Text Input */}
@@ -202,18 +196,17 @@ export default function HomePage() {
                             <button
                               key={key}
                               onClick={() => handlePresetSelect(key)}
-                              className={`relative aspect-square rounded-xl border-2 transition-all ${
-                                isSelected 
-                                  ? 'border-white scale-110 shadow-lg z-10' 
-                                  : 'border-slate-700 hover:border-slate-500 hover:scale-105'
-                              }`}
+                              className={`relative aspect-square rounded-xl border-2 transition-all ${isSelected
+                                ? 'border-white scale-110 shadow-lg z-10'
+                                : 'border-slate-700 hover:border-slate-500 hover:scale-105'
+                                }`}
                               style={{ backgroundColor: preset.backgroundColor }}
                               title={preset.name}
                             >
                               {isSelected && (
                                 <div className="absolute inset-0 flex items-center justify-center">
-                                  <Check 
-                                    className="w-5 h-5" 
+                                  <Check
+                                    className="w-5 h-5"
                                     style={{ color: preset.textColor }}
                                   />
                                 </div>
@@ -253,11 +246,10 @@ export default function HomePage() {
                                 onChange={(e) => handleBackgroundColorChange(e.target.value)}
                                 placeholder="#8ACE00"
                                 maxLength={7}
-                                className={`w-full px-3 py-2.5 rounded-lg bg-slate-900/70 border text-white text-sm font-mono focus:outline-none focus:ring-2 transition-all ${
-                                  bgColorError 
-                                    ? 'border-red-500 focus:ring-red-500' 
-                                    : 'border-slate-700 focus:ring-[#8ACE00] focus:border-[#8ACE00]'
-                                }`}
+                                className={`w-full px-3 py-2.5 rounded-lg bg-slate-900/70 border text-white text-sm font-mono focus:outline-none focus:ring-2 transition-all ${bgColorError
+                                  ? 'border-red-500 focus:ring-red-500'
+                                  : 'border-slate-700 focus:ring-[#8ACE00] focus:border-[#8ACE00]'
+                                  }`}
                               />
                               {bgColorError && (
                                 <p className="text-xs text-red-400 mt-1">Invalid hex color</p>
@@ -288,11 +280,10 @@ export default function HomePage() {
                                 onChange={(e) => handleTextColorChange(e.target.value)}
                                 placeholder="#000000"
                                 maxLength={7}
-                                className={`w-full px-3 py-2.5 rounded-lg bg-slate-900/70 border text-white text-sm font-mono focus:outline-none focus:ring-2 transition-all ${
-                                  textColorError 
-                                    ? 'border-red-500 focus:ring-red-500' 
-                                    : 'border-slate-700 focus:ring-fuchsia-400 focus:border-fuchsia-400'
-                                }`}
+                                className={`w-full px-3 py-2.5 rounded-lg bg-slate-900/70 border text-white text-sm font-mono focus:outline-none focus:ring-2 transition-all ${textColorError
+                                  ? 'border-red-500 focus:ring-red-500'
+                                  : 'border-slate-700 focus:ring-fuchsia-400 focus:border-fuchsia-400'
+                                  }`}
                               />
                               {textColorError && (
                                 <p className="text-xs text-red-400 mt-1">Invalid hex color</p>
@@ -318,9 +309,9 @@ export default function HomePage() {
                           </>
                         )}
                       </Button>
-                      <Button 
-                        onClick={handleShare} 
-                        variant="secondary" 
+                      <Button
+                        onClick={handleShare}
+                        variant="secondary"
                         size="lg"
                         className="flex-1"
                       >
@@ -360,36 +351,11 @@ export default function HomePage() {
                 </div>
               </Card>
             </motion.div>
-
-            {/* Scroll indicator */}
-            <motion.div 
-              className="flex justify-center mt-12"
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ delay: 0.5 }}
-            >
-              <a 
-                href="#how-it-works" 
-                className="flex flex-col items-center gap-2 text-slate-500 hover:text-[#8ACE00] transition-colors"
-              >
-                <span className="text-sm">Learn more</span>
-                <motion.div
-                  animate={{ y: [0, 5, 0] }}
-                  transition={{ repeat: Infinity, duration: 1.5 }}
-                >
-                  <ArrowDown className="w-5 h-5" />
-                </motion.div>
-              </a>
-            </motion.div>
           </Container>
         </section>
 
-        {/* Other Sections */}
-        <HowToUseSection />
-        <FeaturesSection />
-        <BenefitsSection />
+        {/* SEO Content Section */}
         <SEOTextSection />
-        <FAQSection />
       </main>
       <Footer />
     </>

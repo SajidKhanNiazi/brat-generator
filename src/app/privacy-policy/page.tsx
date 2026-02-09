@@ -3,8 +3,8 @@ import { Footer } from '@/components/layout/Footer'
 import { Container } from '@/components/ui/Container'
 
 export const metadata = {
-  title: 'Privacy Policy - Brat Generator',
-  description: 'Privacy policy for Brat Generator. Learn how we handle your data and protect your privacy.',
+  title: 'Privacy Policy – Brat Generator',
+  description: 'Learn how Brat Generator protects your privacy. We explain data collection, cookies, and user rights.',
 }
 
 export default function PrivacyPolicyPage() {
@@ -28,8 +28,8 @@ export default function PrivacyPolicyPage() {
                   Introduction
                 </h2>
                 <p className="text-slate-400 leading-relaxed">
-                  Welcome to Brat Generator. We respect your privacy and are committed to protecting 
-                  any information you may provide while using our service. This privacy policy explains 
+                  Welcome to Brat Generator. We respect your privacy and are committed to protecting
+                  any information you may provide while using our service. This privacy policy explains
                   our practices regarding data collection and usage.
                 </p>
               </section>
@@ -39,8 +39,8 @@ export default function PrivacyPolicyPage() {
                   Information We Collect
                 </h2>
                 <p className="text-slate-400 leading-relaxed">
-                  Our brat text generator operates entirely in your browser. We do not collect, 
-                  store, or transmit any text you enter into our tool. All text transformations 
+                  Our brat text generator operates entirely in your browser. We do not collect,
+                  store, or transmit any text you enter into our tool. All text transformations
                   happen locally on your device.
                 </p>
               </section>
@@ -50,8 +50,8 @@ export default function PrivacyPolicyPage() {
                   Cookies and Analytics
                 </h2>
                 <p className="text-slate-400 leading-relaxed">
-                  We may use basic analytics to understand how visitors use our website. This may 
-                  include anonymous data such as page views and general location. We do not use 
+                  We may use basic analytics to understand how visitors use our website. This may
+                  include anonymous data such as page views and general location. We do not use
                   this data to identify individual users.
                 </p>
               </section>
@@ -61,7 +61,7 @@ export default function PrivacyPolicyPage() {
                   Third-Party Services
                 </h2>
                 <p className="text-slate-400 leading-relaxed">
-                  Our website may contain links to external sites. We are not responsible for the 
+                  Our website may contain links to external sites. We are not responsible for the
                   privacy practices of these external websites.
                 </p>
               </section>
@@ -71,7 +71,7 @@ export default function PrivacyPolicyPage() {
                   Changes to This Policy
                 </h2>
                 <p className="text-slate-400 leading-relaxed">
-                  We may update this privacy policy from time to time. Any changes will be posted 
+                  We may update this privacy policy from time to time. Any changes will be posted
                   on this page with an updated revision date.
                 </p>
               </section>
@@ -81,7 +81,7 @@ export default function PrivacyPolicyPage() {
                   Contact Us
                 </h2>
                 <p className="text-slate-400 leading-relaxed">
-                  If you have any questions about this privacy policy, please contact us through 
+                  If you have any questions about this privacy policy, please contact us through
                   our website.
                 </p>
               </section>
