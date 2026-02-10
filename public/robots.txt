@@ -9,4 +9,4 @@ Allow: /
 # Disallow: /api/
 
 # Sitemap location
-Sitemap: https://yourdomain.com/sitemap.xml
+Sitemap: https://brat-generator.work/sitemap.xml

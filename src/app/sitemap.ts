@@ -1,12 +1,22 @@
 import { MetadataRoute } from 'next';
 
 export default function sitemap(): MetadataRoute.Sitemap {
-    return [
-        {
-            url: 'https://brat-generator.work',
-            lastModified: new Date(),
-            changeFrequency: 'weekly',
-            priority: 1,
-        },
+    const baseUrl = 'https://brat-generator.work';
+    const lastModified = new Date();
+
+    const routes = [
+        '',
+        '/contact',
+        '/privacy-policy',
+        '/terms',
+        '/cookies',
+        '/disclaimer',
     ];
+
+    return routes.map((route) => ({
+        url: `${baseUrl}${route}`,
+        lastModified,
+        changeFrequency: route === '' ? 'weekly' : 'monthly',
+        priority: route === '' ? 1 : 0.8,
+    }));
 }

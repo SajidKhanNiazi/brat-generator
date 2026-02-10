@@ -141,7 +141,7 @@ export default function HomePage() {
               <h1 className="font-display text-3xl sm:text-4xl lg:text-5xl font-bold leading-tight mb-4">
                 <span className="text-white">Brat Generator – </span>
                 <span className="bg-clip-text text-transparent bg-gradient-to-r from-[#8ACE00] via-lime-400 to-green-400">
-                  Create Bold Brat Text & Images Online
+                  The Official Brat Album Cover Maker
                 </span>
               </h1>
 
@@ -171,10 +171,12 @@ export default function HomePage() {
                       </label>
                       <input
                         type="text"
+                        id="brat-text-input"
                         value={text}
                         onChange={(e) => setText(e.target.value)}
                         placeholder="Type your text here..."
                         maxLength={30}
+                        aria-label="Enter the text for your Brat image"
                         className="w-full px-4 py-4 rounded-xl bg-slate-900/70 border border-slate-700 text-white text-xl placeholder-slate-500 focus:outline-none focus:ring-2 focus:ring-[#8ACE00] focus:border-transparent transition-all"
                       />
                       <p className="text-sm text-slate-500 mt-2">
@@ -202,6 +204,7 @@ export default function HomePage() {
                                 }`}
                               style={{ backgroundColor: preset.backgroundColor }}
                               title={preset.name}
+                              aria-label={`Select ${preset.name} style`}
                             >
                               {isSelected && (
                                 <div className="absolute inset-0 flex items-center justify-center">
@@ -237,6 +240,7 @@ export default function HomePage() {
                               onChange={(e) => handleBackgroundColorChange(e.target.value)}
                               className="w-12 h-12 rounded-xl cursor-pointer border-2 border-slate-700 flex-shrink-0 hover:border-[#8ACE00] transition-colors shadow-lg"
                               title="Pick background color"
+                              aria-label="Select custom background color"
                               style={{ backgroundColor: isValidHexColor(backgroundColor) ? backgroundColor : '#8ACE00' }}
                             />
                             <div className="flex-1">
@@ -271,6 +275,7 @@ export default function HomePage() {
                               onChange={(e) => handleTextColorChange(e.target.value)}
                               className="w-12 h-12 rounded-xl cursor-pointer border-2 border-slate-700 flex-shrink-0 hover:border-fuchsia-400 transition-colors shadow-lg"
                               title="Pick text color"
+                              aria-label="Select custom text color"
                               style={{ backgroundColor: isValidHexColor(textColor) ? textColor : '#000000' }}
                             />
                             <div className="flex-1">
@@ -296,7 +301,12 @@ export default function HomePage() {
 
                     {/* Action Buttons */}
                     <div className="flex flex-col sm:flex-row gap-3 pt-2">
-                      <Button onClick={handleDownload} size="lg" className="flex-1">
+                      <Button
+                        onClick={handleDownload}
+                        size="lg"
+                        className="flex-1"
+                        aria-label="Download your Brat image"
+                      >
                         {downloaded ? (
                           <>
                             <Check className="w-5 h-5 mr-2" />
@@ -314,6 +324,7 @@ export default function HomePage() {
                         variant="secondary"
                         size="lg"
                         className="flex-1"
+                        aria-label={canShare ? 'Share your Brat image' : 'Copy Brat image to clipboard'}
                       >
                         {copied ? (
                           <>

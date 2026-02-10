@@ -38,10 +38,10 @@ export default function ContactPage() {
                                             For general inquiries, feedback, or support, send us an email:
                                         </p>
                                         <a
-                                            href="mailto:contact@bratgenerator.com"
+                                            href="mailto:contact@brat-generator.work"
                                             className="text-[#8ACE00] hover:underline font-medium"
                                         >
-                                            contact@bratgenerator.com
+                                            contact@brat-generator.work
                                         </a>
                                     </div>
                                 </div>

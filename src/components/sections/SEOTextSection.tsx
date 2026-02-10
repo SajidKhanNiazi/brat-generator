@@ -104,7 +104,7 @@ export function SEOTextSection() {
                                 How to Use the Brat Generator
                             </h3>
                         </div>
-                        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+                        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-10">
                             <div className="text-center">
                                 <div className="w-10 h-10 rounded-full bg-[#8ACE00] text-slate-900 font-bold flex items-center justify-center mx-auto mb-3 text-lg">
                                     1
@@ -133,28 +133,50 @@ export function SEOTextSection() {
                                 </p>
                             </div>
                         </div>
+
+                        {/* Integrated Video Demo */}
+                        <div className="max-w-3xl mx-auto">
+                            <div className="relative aspect-video rounded-xl overflow-hidden bg-slate-900 shadow-2xl ring-1 ring-white/10 group">
+                                <div className="absolute inset-0 bg-gradient-to-tr from-[#8ACE00]/20 via-transparent to-fuchsia-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none" />
+                                <iframe
+                                    src="https://www.youtube.com/embed/-dPbs5lounM"
+                                    title="Brat Generator Demo"
+                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                    allowFullScreen
+                                    className="absolute inset-0 w-full h-full"
+                                ></iframe>
+                            </div>
+                            <p className="text-center text-xs text-slate-500 mt-4 italic">
+                                Watch the quick video demo above to see how it works!
+                            </p>
+                        </div>
                     </Card>
                 </motion.div>
 
                 {/* Additional Content Sections */}
-                <div className="max-w-4xl mx-auto space-y-12">
+                <div className="max-w-4xl mx-auto space-y-16">
                     <motion.section
                         initial={{ opacity: 0 }}
                         whileInView={{ opacity: 1 }}
                         viewport={{ once: true }}
                     >
-                        <h2 className="font-display text-2xl sm:text-3xl font-bold text-white mb-4">
+                        <h2 className="font-display text-2xl sm:text-3xl font-bold text-white mb-6">
                             Best Uses for a Brat Text Generator
                         </h2>
-                        <p className="text-slate-400 leading-relaxed mb-4">
-                            This tool is versatile and perfect for many creative projects. Make memes that mimic the Brat album
-                            aesthetic. Create custom Instagram story backgrounds or TikTok post images. Design unique Discord
-                            profile banners or Twitter headers. You can even print them as stickers or posters.
-                        </p>
-                        <p className="text-slate-400 leading-relaxed">
-                            The Brat text style is minimalist and attention-grabbing. It works great for announcements, quotes,
-                            or jokes. Brands and creators use this style to connect with Gen Z audiences and pop culture trends.
-                        </p>
+                        <div className="space-y-4 text-slate-400 leading-relaxed">
+                            <p>
+                                The Brat aesthetic, characterized by its lo-fi, minimalist, and unapologetically bold look, has taken the internet by storm. Our Brat Generator allows you to tap into this cultural phenomenon effortlessly. This tool is versatile and perfect for many creative projects, from casual memes to professional-looking social media assets.
+                            </p>
+                            <p>
+                                <strong>Social Media Content:</strong> Make memes that mimic the iconic Brat album aesthetic. Create custom Instagram story backgrounds, TikTok post images, or profile pictures that stand out in crowded feeds. The high contrast of the classic Brat Green and Arial-style font ensures your message is seen.
+                            </p>
+                            <p>
+                                <strong>Digital Branding:</strong> Design unique Discord profile banners, Twitter headers, or YouTube thumbnails. Brands and creators use this style to connect with Gen Z audiences and pop culture trends, signaling they are current and in-tune with the latest aesthetics.
+                            </p>
+                            <p>
+                                <strong>Physical Merch & Print:</strong> Because our tool generates high-quality 1080x1080px PNG images, they are perfect for custom stickers, posters, or even T-shirt designs. The minimalist design translates well to physical print, making it a favorite for DIY fans.
+                            </p>
+                        </div>
                     </motion.section>
 
                     <motion.section
@@ -162,14 +184,68 @@ export function SEOTextSection() {
                         whileInView={{ opacity: 1 }}
                         viewport={{ once: true }}
                     >
-                        <h2 className="font-display text-2xl sm:text-3xl font-bold text-white mb-4">
+                        <h2 className="font-display text-2xl sm:text-3xl font-bold text-white mb-6">
+                            Why Is the Brat Aesthetic So Popular?
+                        </h2>
+                        <div className="space-y-4 text-slate-400 leading-relaxed">
+                            <p>
+                                Inspired by Charli XCX&apos;s album cover, the Brat style represents a shift away from overly polished, &quot;perfect&quot; social media imagery. It embraces a &quot;messy&quot; yet intentional look that feels authentic and raw. The lowercase typography and slightly blurred effect are key elements that our generator replicates perfectly.
+                            </p>
+                            <p>
+                                This look is often associated with the &quot;hyperpop&quot; scene and club culture, but it has transcended those niches to become a universal symbol of 2024 internet culture. Using a Brat style generator isn&apos;t just about making an image; it&apos;s about participating in a global conversation.
+                            </p>
+                        </div>
+                    </motion.section>
+
+                    <motion.section
+                        initial={{ opacity: 0 }}
+                        whileInView={{ opacity: 1 }}
+                        viewport={{ once: true }}
+                    >
+                        <h2 className="font-display text-2xl sm:text-3xl font-bold text-white mb-6">
                             Completely Free and No Sign-Up Required
                         </h2>
-                        <p className="text-slate-400 leading-relaxed">
-                            We believe tools like this should be accessible to everyone. That&apos;s why Brat Generator is 100% free
-                            with no hidden costs or subscription fees. You don&apos;t need to create an account or provide any personal
-                            information. Just visit the website, create your image, and download it instantly.
-                        </p>
+                        <div className="space-y-4 text-slate-400 leading-relaxed">
+                            <p>
+                                We believe tools like this should be accessible to everyone. That&apos;s why Brat Generator is 100% free with no hidden costs or subscription fees. You don&apos;t need to create an account or provide any personal information. Your privacy is a priority—that&apos;s why all image processing happens directly in your browser.
+                            </p>
+                            <p>
+                                <strong>Fast & Lightweight:</strong> Our generator is optimized for speed. There are no heavy frameworks or slow loading times. Whether you are on a desktop or a mobile device with a slow connection, you can create and download your images in seconds.
+                            </p>
+                            <p>
+                                <strong>No Watermarks:</strong> Unlike other online generators, we don&apos;t put watermarks on your creations. The images you generate are yours to keep, share, and use however you see fit.
+                            </p>
+                        </div>
+                    </motion.section>
+
+                    <motion.section
+                        initial={{ opacity: 0 }}
+                        whileInView={{ opacity: 1 }}
+                        viewport={{ once: true }}
+                    >
+                        <h2 className="font-display text-2xl sm:text-3xl font-bold text-white mb-6">
+                            Frequently Asked Questions
+                        </h2>
+                        <div className="space-y-6">
+                            <div>
+                                <h3 className="text-white font-semibold mb-2">Is the Brat font available in this generator?</h3>
+                                <p className="text-slate-400 text-sm">
+                                    Our generator uses a font stack that replicates the look of the album cover, focusing on bold, clean sans-serif typography similar to Arial or Helvetica, which is central to the Brat aesthetic.
+                                </p>
+                            </div>
+                            <div>
+                                <h3 className="text-white font-semibold mb-2">Can I use custom colors?</h3>
+                                <p className="text-slate-400 text-sm">
+                                    Yes! While we provide presets for the classic Brat Green and other variations, you can use our color picker to choose any combination of background and text colors.
+                                </p>
+                            </div>
+                            <div>
+                                <h3 className="text-white font-semibold mb-2">What is the best image size for Instagram?</h3>
+                                <p className="text-slate-400 text-sm">
+                                    Our images are generated at 1080x1080 pixels, which is the standard size for Instagram posts, ensuring your Brat creations look sharp and professional on the platform.
+                                </p>
+                            </div>
+                        </div>
                     </motion.section>
                 </div>
 
