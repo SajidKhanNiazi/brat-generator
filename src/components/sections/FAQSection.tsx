@@ -7,32 +7,32 @@ import { ChevronDown } from 'lucide-react'
 
 const faqs = [
   {
-    question: 'What is Brat Generator?',
-    answer: 'Brat Generator is an online tool that allows users to create custom images resembling the album cover of Charli XCX\'s "Brat." Users can input their own text to generate an image with a green background and lowercase typography, mimicking the album\'s iconic design.',
+    question: '1. What is a Brat Generator?',
+    answer: 'A Brat Generator is an online tool that helps you create brat-style text instantly. You simply enter your text, and the tool generates the brat version for you to use anywhere online.',
   },
   {
-    question: 'How do I use the Brat Generator?',
-    answer: 'Using Brat Generator is simple. Enter the desired text in the input field above, customize the colors using our presets or color picker, and the tool will instantly generate a custom image in the style of the "Brat" album cover. You can then download or share the image.',
+    question: '2. How does the Brat Generator work?',
+    answer: 'The Brat Generator works by transforming normal text into a brat-style format automatically. You just type or paste your text, and the result appears instantly without any extra steps.',
   },
   {
-    question: 'Is the Brat Generator free to use?',
-    answer: 'Yes, Brat Generator is completely free. Users can create and share as many images as they want without any cost. There are no hidden fees, no premium features, and no account required.',
+    question: '3. Is this Brat Generator free to use?',
+    answer: 'Yes, this Brat Generator is completely free to use. You can generate brat text as many times as you want without paying anything.',
   },
   {
-    question: 'Can I choose different background colors?',
-    answer: 'Yes! While the classic green background (#8ACE00) is the signature option, Brat Generator also offers white, black, pink, blue, purple, orange, and mint presets. You can also use the custom color picker to choose any color you want.',
+    question: '4. Do I need to sign up to use the Brat Generator?',
+    answer: 'No, you do not need to sign up or create an account. You can use the Brat Generator directly without any registration.',
   },
   {
-    question: 'Is Brat Generator officially affiliated with Charli XCX?',
-    answer: 'No, Brat Generator is not officially affiliated with Charli XCX. It is an independent tool designed to replicate the visual style of her "Brat" album cover for creative and entertainment purposes.',
+    question: '5. Where can I use the generated Brat text?',
+    answer: 'You can use the generated brat text on social media platforms like Instagram, TikTok, or anywhere you want to share creative or fun text online.',
   },
   {
-    question: 'Can I share the generated images on social media?',
-    answer: 'Absolutely! The images created with Brat Generator are perfect for sharing on social media platforms like Instagram, TikTok, Twitter, and more. The tool encourages users to engage with the album\'s aesthetic and create viral, shareable content.',
+    question: '6. Can I copy and paste the Brat text easily?',
+    answer: 'Yes, the Brat Generator allows you to easily copy the generated brat text and paste it wherever you need without any formatting issues.',
   },
   {
-    question: 'What image size does the Brat Generator create?',
-    answer: 'Brat Generator creates images at 1080x1080 pixels, which is the perfect square format for Instagram posts, profile pictures, and other social media platforms.',
+    question: '7. Does the Brat Generator work on mobile devices?',
+    answer: 'Yes, the Brat Generator is mobile-friendly and works smoothly on smartphones, tablets, and desktop devices.',
   },
 ]
 

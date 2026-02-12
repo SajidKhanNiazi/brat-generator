@@ -54,32 +54,38 @@ export const colorPresets = {
 
 export type ColorPresetKey = keyof typeof colorPresets
 
-// Calculate optimal font size to fit text
+// Calculate optimal font size to fit multiline text
 function calculateFontSize(
   ctx: CanvasRenderingContext2D,
-  text: string,
+  lines: string[],
   maxWidth: number,
   maxHeight: number,
-  initialSize: number = 120
+  initialSize: number = 110
 ): number {
   let fontSize = initialSize
-  const minFontSize = 24
-  
-  ctx.font = `bold ${fontSize}px Arial, sans-serif`
-  
+  const minFontSize = 16
+  const lineHeight = 1.15
+
   // Reduce font size until text fits
   while (fontSize > minFontSize) {
-    const metrics = ctx.measureText(text)
-    const textWidth = metrics.width
-    
-    if (textWidth <= maxWidth * 0.85) {
+    ctx.font = `bold ${fontSize}px Arial, sans-serif`
+
+    let fitsWidth = true
+    for (const line of lines) {
+      if (ctx.measureText(line).width > maxWidth * 0.9) {
+        fitsWidth = false
+        break
+      }
+    }
+
+    const totalHeight = lines.length * fontSize * lineHeight
+    if (fitsWidth && totalHeight <= maxHeight * 0.85) {
       break
     }
-    
+
     fontSize -= 4
-    ctx.font = `bold ${fontSize}px Arial, sans-serif`
   }
-  
+
   return fontSize
 }
 
@@ -90,31 +96,39 @@ export function generateBratImage(
 ): void {
   const { text, backgroundColor, textColor } = options
   const ctx = canvas.getContext('2d')
-  
+
   if (!ctx) return
-  
+
   const width = canvas.width
   const height = canvas.height
-  
+
   // Fill background
   ctx.fillStyle = backgroundColor
   ctx.fillRect(0, 0, width, height)
-  
+
   // Configure text
   const displayText = text.toLowerCase() || 'brat'
-  const fontSize = calculateFontSize(ctx, displayText, width, height)
-  
+  const lines = displayText.split('\n').filter(l => l.trim() !== '')
+  const fontSize = calculateFontSize(ctx, lines, width, height)
+  const lineHeight = fontSize * 1.15
+
   ctx.font = `bold ${fontSize}px Arial, sans-serif`
   ctx.fillStyle = textColor
   ctx.textAlign = 'center'
   ctx.textBaseline = 'middle'
-  
+
   // Add slight blur effect for authentic look
   ctx.filter = 'blur(0.5px)'
-  
-  // Draw text centered
-  ctx.fillText(displayText, width / 2, height / 2)
-  
+
+  // Draw lines centered
+  const totalHeight = lines.length * lineHeight
+  let currentY = (height - totalHeight) / 2 + lineHeight / 2
+
+  for (const line of lines) {
+    ctx.fillText(line.trim(), width / 2, currentY)
+    currentY += lineHeight
+  }
+
   // Reset filter
   ctx.filter = 'none'
 }
@@ -134,9 +148,9 @@ export async function downloadBratImage(
   filename: string = 'brat-generator'
 ): Promise<void> {
   const blob = await canvasToBlob(canvas)
-  
+
   if (!blob) return
-  
+
   const url = URL.createObjectURL(blob)
   const link = document.createElement('a')
   link.href = url
@@ -155,23 +169,23 @@ export async function shareBratImage(
   if (!navigator.share || !navigator.canShare) {
     return false
   }
-  
+
   const blob = await canvasToBlob(canvas)
-  
+
   if (!blob) return false
-  
+
   const file = new File([blob], 'brat-generator.png', { type: 'image/png' })
-  
+
   const shareData = {
     title: 'Brat Generator',
     text: `Check out my Brat creation: "${text}"`,
     files: [file],
   }
-  
+
   if (!navigator.canShare(shareData)) {
     return false
   }
-  
+
   try {
     await navigator.share(shareData)
     return true

@@ -2,12 +2,19 @@
 
 import { useState } from 'react'
 import Link from 'next/link'
+import { usePathname } from 'next/navigation'
 import { motion, AnimatePresence } from 'framer-motion'
 import { Container } from '@/components/ui/Container'
-import { Sparkles, Menu, X } from 'lucide-react'
+import { Sparkles, Menu, X, Music } from 'lucide-react'
 
 export function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
+  const pathname = usePathname()
+
+  const navLinks = [
+    { href: '/', label: 'Generator', mobileIcon: '🎨' },
+    { href: '/brat-lyric-generator', label: 'Lyric Generator', mobileIcon: '🎵' },
+  ]
 
   return (
     <header className="sticky top-0 z-50 backdrop-blur-md bg-slate-900/90 border-b border-slate-800">
@@ -28,31 +35,28 @@ export function Header() {
           </Link>
 
           {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center gap-6">
-            <Link
-              href="/#how-it-works"
-              className="font-display font-medium text-slate-400 hover:text-[#8ACE00] transition-colors text-sm"
-            >
-              How It Works
-            </Link>
-            <Link
-              href="/contact"
-              className="font-display font-medium text-slate-400 hover:text-[#8ACE00] transition-colors text-sm"
-            >
-              Contact
-            </Link>
-            <Link
-              href="/"
-              className="px-4 py-2 rounded-lg bg-[#8ACE00] text-slate-900 font-display font-semibold text-sm hover:bg-[#9de000] transition-colors"
-            >
-              Create Now
-            </Link>
+          <div className="hidden md:flex items-center gap-1">
+            {navLinks.map((link) => {
+              const isActive = pathname === link.href
+              return (
+                <Link
+                  key={link.href}
+                  href={link.href}
+                  className={`px-4 py-2 rounded-lg font-display font-medium text-sm transition-colors ${isActive
+                      ? 'bg-[#8ACE00]/10 text-[#8ACE00]'
+                      : 'text-slate-400 hover:text-white hover:bg-slate-800'
+                    }`}
+                >
+                  {link.label}
+                </Link>
+              )
+            })}
           </div>
 
           {/* Mobile Menu Button */}
           <button
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            className="md:hidden p-2 rounded-lg hover:bg-slate-800 transition-colors"
+            className="md:hidden p-2.5 rounded-lg hover:bg-slate-800 transition-colors active:bg-slate-700"
             aria-label="Toggle menu"
           >
             {mobileMenuOpen ? (
@@ -73,37 +77,24 @@ export function Header() {
               transition={{ duration: 0.2 }}
               className="md:hidden overflow-hidden border-t border-slate-800"
             >
-              <div className="py-4 space-y-1">
-                <Link
-                  href="/"
-                  onClick={() => setMobileMenuOpen(false)}
-                  className="block px-4 py-3 text-white hover:bg-slate-800 rounded-lg font-display font-medium transition-colors"
-                >
-                  🎨 Generator
-                </Link>
-                <Link
-                  href="/#how-it-works"
-                  onClick={() => setMobileMenuOpen(false)}
-                  className="block px-4 py-3 text-slate-400 hover:bg-slate-800 hover:text-white rounded-lg font-display transition-colors"
-                >
-                  📖 How It Works
-                </Link>
-                <Link
-                  href="/contact"
-                  onClick={() => setMobileMenuOpen(false)}
-                  className="block px-4 py-3 text-slate-400 hover:bg-slate-800 hover:text-white rounded-lg font-display transition-colors"
-                >
-                  📧 Contact Us
-                </Link>
-                <div className="pt-2">
-                  <Link
-                    href="/"
-                    onClick={() => setMobileMenuOpen(false)}
-                    className="block mx-4 px-4 py-3 text-center rounded-lg bg-[#8ACE00] text-slate-900 font-display font-semibold hover:bg-[#9de000] transition-colors"
-                  >
-                    Create Now
-                  </Link>
-                </div>
+              <div className="py-3 space-y-1">
+                {navLinks.map((link) => {
+                  const isActive = pathname === link.href
+                  return (
+                    <Link
+                      key={link.href}
+                      href={link.href}
+                      onClick={() => setMobileMenuOpen(false)}
+                      className={`flex items-center gap-3 px-4 py-3.5 rounded-xl font-display font-medium transition-colors min-h-[48px] ${isActive
+                          ? 'bg-[#8ACE00]/10 text-[#8ACE00]'
+                          : 'text-slate-300 hover:bg-slate-800 hover:text-white active:bg-slate-700'
+                        }`}
+                    >
+                      <span className="text-lg">{link.mobileIcon}</span>
+                      {link.label}
+                    </Link>
+                  )
+                })}
               </div>
             </motion.div>
           )}

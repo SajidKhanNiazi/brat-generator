@@ -2,7 +2,7 @@
 
 import { Container } from '@/components/ui/Container'
 import { motion } from 'framer-motion'
-import { Sparkles, Palette, Zap, Download, Share2, Smartphone, Clock, Heart } from 'lucide-react'
+import { Sparkles, Palette, Zap, Download, Share2, Smartphone, Clock } from 'lucide-react'
 import { Card } from '@/components/ui/Card'
 
 export function SEOTextSection() {
@@ -218,61 +218,7 @@ export function SEOTextSection() {
                         </div>
                     </motion.section>
 
-                    <motion.section
-                        initial={{ opacity: 0 }}
-                        whileInView={{ opacity: 1 }}
-                        viewport={{ once: true }}
-                    >
-                        <h2 className="font-display text-2xl sm:text-3xl font-bold text-white mb-6">
-                            Frequently Asked Questions
-                        </h2>
-                        <div className="space-y-6">
-                            <div>
-                                <h3 className="text-white font-semibold mb-2">Is the Brat font available in this generator?</h3>
-                                <p className="text-slate-400 text-sm">
-                                    Our generator uses a font stack that replicates the look of the album cover, focusing on bold, clean sans-serif typography similar to Arial or Helvetica, which is central to the Brat aesthetic.
-                                </p>
-                            </div>
-                            <div>
-                                <h3 className="text-white font-semibold mb-2">Can I use custom colors?</h3>
-                                <p className="text-slate-400 text-sm">
-                                    Yes! While we provide presets for the classic Brat Green and other variations, you can use our color picker to choose any combination of background and text colors.
-                                </p>
-                            </div>
-                            <div>
-                                <h3 className="text-white font-semibold mb-2">What is the best image size for Instagram?</h3>
-                                <p className="text-slate-400 text-sm">
-                                    Our images are generated at 1080x1080 pixels, which is the standard size for Instagram posts, ensuring your Brat creations look sharp and professional on the platform.
-                                </p>
-                            </div>
-                        </div>
-                    </motion.section>
                 </div>
-
-                {/* CTA Section */}
-                <motion.div
-                    initial={{ opacity: 0, scale: 0.95 }}
-                    whileInView={{ opacity: 1, scale: 1 }}
-                    viewport={{ once: true }}
-                    className="mt-16 text-center"
-                >
-                    <Card className="p-8 bg-gradient-to-br from-[#8ACE00]/20 to-emerald-500/20 border-[#8ACE00]/30">
-                        <Heart className="w-12 h-12 text-[#8ACE00] mx-auto mb-4" />
-                        <h3 className="font-display text-2xl font-bold text-white mb-3">
-                            Start Creating Your Brat Images Now
-                        </h3>
-                        <p className="text-slate-400 mb-6 max-w-2xl mx-auto">
-                            Join thousands of creators making bold, minimalist images. No skills required. No downloads.
-                            Just pure creative freedom in your browser.
-                        </p>
-                        <a
-                            href="#generator"
-                            className="inline-block px-8 py-3 rounded-lg bg-[#8ACE00] text-slate-900 font-display font-semibold hover:bg-[#9de000] transition-colors"
-                        >
-                            Try It Now
-                        </a>
-                    </Card>
-                </motion.div>
             </Container>
         </section>
     )

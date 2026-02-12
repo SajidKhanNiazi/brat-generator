@@ -7,7 +7,7 @@ import { Footer } from '@/components/layout/Footer'
 import { Container } from '@/components/ui/Container'
 import { Button } from '@/components/ui/Button'
 import { Card } from '@/components/ui/Card'
-import { SEOTextSection } from '@/components/sections'
+import { SEOTextSection, FAQSection } from '@/components/sections'
 import {
   generateBratImage,
   downloadBratImage,
@@ -367,6 +367,9 @@ export default function HomePage() {
 
         {/* SEO Content Section */}
         <SEOTextSection />
+
+        {/* FAQ Section */}
+        <FAQSection />
       </main>
       <Footer />
     </>
