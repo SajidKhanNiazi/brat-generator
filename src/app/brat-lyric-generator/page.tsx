@@ -2,7 +2,6 @@
 
 import { useState, useRef, useCallback, useEffect } from 'react'
 import Link from 'next/link'
-import { motion } from 'framer-motion'
 import { Header } from '@/components/layout/Header'
 import { Footer } from '@/components/layout/Footer'
 import { Container } from '@/components/ui/Container'
@@ -127,11 +126,14 @@ function FAQItem({
                     className={`w-5 h-5 text-slate-400 flex-shrink-0 transition-transform duration-200 ${open ? 'rotate-180' : ''}`}
                 />
             </button>
-            {open && (
+            <div
+                className={`overflow-hidden transition-all duration-200 ease-in-out ${open ? 'max-h-[1000px] opacity-100' : 'max-h-0 opacity-0'
+                    }`}
+            >
                 <div className="px-5 py-4 text-slate-400 text-sm leading-relaxed bg-slate-900/40">
                     {a}
                 </div>
-            )}
+            </div>
         </div>
     )
 }
@@ -262,13 +264,14 @@ export default function BratLyricGeneratorPage() {
             <main>
                 {/* ── 1. Hero Section ── */}
                 <section className="relative py-12 lg:py-20 overflow-hidden">
-                    <div className="absolute inset-0 overflow-hidden pointer-events-none">
+                    {/* Background decorations — hidden on mobile */}
+                    <div className="absolute inset-0 overflow-hidden pointer-events-none hidden sm:block">
                         <div className="absolute top-20 left-10 w-72 h-72 bg-[#8ACE00]/20 rounded-full blur-3xl" />
                         <div className="absolute bottom-20 right-10 w-96 h-96 bg-fuchsia-500/10 rounded-full blur-3xl" />
                     </div>
 
                     <Container className="relative">
-                        <div className="text-center max-w-3xl mx-auto mb-12">
+                        <div className="text-center max-w-3xl mx-auto mb-12 animate-fade-in-up">
                             <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#8ACE00]/10 border border-[#8ACE00]/30 mb-6">
                                 <Sparkles className="w-4 h-4 text-[#8ACE00]" />
                                 <span className="text-sm font-medium text-[#8ACE00]">
@@ -289,7 +292,7 @@ export default function BratLyricGeneratorPage() {
                         </div>
 
                         {/* ── 2. Lyrics Tool UI ── */}
-                        <div className="max-w-5xl mx-auto">
+                        <div className="max-w-5xl mx-auto animate-fade-in-up" style={{ animationDelay: '0.15s' }}>
                             <Card className="p-6 sm:p-8 lg:p-10" hover={false}>
                                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12">
                                     {/* Left: Controls */}
@@ -539,7 +542,7 @@ export default function BratLyricGeneratorPage() {
                                     <li>Results are fast and lightweight</li>
                                 </ul>
                                 <p className="text-slate-400 leading-relaxed font-semibold">
-                                    It’s perfect for:
+                                    It&apos;s perfect for:
                                 </p>
                                 <ul className="list-disc list-inside space-y-2 text-slate-400">
                                     <li>Song drafts</li>
@@ -548,7 +551,7 @@ export default function BratLyricGeneratorPage() {
                                     <li>Social media captions</li>
                                 </ul>
                                 <p className="text-slate-400 leading-relaxed">
-                                    Because it only formats text, it’s safe to use for personal
+                                    Because it only formats text, it&apos;s safe to use for personal
                                     and commercial projects.
                                 </p>
                             </div>
@@ -569,7 +572,7 @@ export default function BratLyricGeneratorPage() {
                                     <li>No copyrighted lyrics are used</li>
                                     <li>No real songs are copied</li>
                                     <li>
-                                        “Charli-inspired” only refers to style and mood, not
+                                        &ldquo;Charli-inspired&rdquo; only refers to style and mood, not
                                         content
                                     </li>
                                 </ul>
@@ -589,7 +592,7 @@ export default function BratLyricGeneratorPage() {
                                 Brat Lyrics Template Examples
                             </h2>
                             <p className="text-slate-400 text-center mb-8">
-                                If you’re not sure how to structure your lyrics, you can follow
+                                If you&apos;re not sure how to structure your lyrics, you can follow
                                 a brat lyrics template like these:
                             </p>
                             <div className="grid gap-6 sm:grid-cols-2">

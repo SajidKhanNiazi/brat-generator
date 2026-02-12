@@ -1,13 +1,12 @@
 'use client'
 
 import { useState, useRef, useCallback, useEffect } from 'react'
-import { motion } from 'framer-motion'
+import dynamic from 'next/dynamic'
 import { Header } from '@/components/layout/Header'
 import { Footer } from '@/components/layout/Footer'
 import { Container } from '@/components/ui/Container'
 import { Button } from '@/components/ui/Button'
 import { Card } from '@/components/ui/Card'
-import { SEOTextSection, FAQSection } from '@/components/sections'
 import {
   generateBratImage,
   downloadBratImage,
@@ -16,6 +15,16 @@ import {
   ColorPresetKey,
 } from '@/lib/bratGenerator'
 import { Download, Share2, Palette, Type, Sparkles, Check, Droplet, Paintbrush } from 'lucide-react'
+
+// Lazy-load below-fold sections — they don't need to block FCP/LCP
+const SEOTextSection = dynamic(
+  () => import('@/components/sections/SEOTextSection').then(mod => ({ default: mod.SEOTextSection })),
+  { ssr: true }
+)
+const FAQSection = dynamic(
+  () => import('@/components/sections/FAQSection').then(mod => ({ default: mod.FAQSection })),
+  { ssr: true }
+)
 
 export default function HomePage() {
   const canvasRef = useRef<HTMLCanvasElement>(null)
@@ -115,28 +124,19 @@ export default function HomePage() {
       <main>
         {/* Hero + Generator Section */}
         <section className="relative py-12 lg:py-20 overflow-hidden">
-          {/* Background decorations */}
-          <div className="absolute inset-0 overflow-hidden pointer-events-none">
+          {/* Background decorations — hidden on mobile to reduce DOM/paint cost */}
+          <div className="absolute inset-0 overflow-hidden pointer-events-none hidden sm:block">
             <div className="absolute top-20 left-10 w-72 h-72 bg-[#8ACE00]/20 rounded-full blur-3xl" />
             <div className="absolute bottom-20 right-10 w-96 h-96 bg-fuchsia-500/10 rounded-full blur-3xl" />
           </div>
 
           <Container className="relative">
             {/* Hero Text */}
-            <motion.div
-              className="text-center max-w-3xl mx-auto mb-12"
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-            >
-              <motion.div
-                className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#8ACE00]/10 border border-[#8ACE00]/30 mb-6"
-                initial={{ opacity: 0, scale: 0.9 }}
-                animate={{ opacity: 1, scale: 1 }}
-                transition={{ delay: 0.1 }}
-              >
+            <div className="text-center max-w-3xl mx-auto mb-12 animate-fade-in-up">
+              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#8ACE00]/10 border border-[#8ACE00]/30 mb-6">
                 <Sparkles className="w-4 h-4 text-[#8ACE00]" />
                 <span className="text-sm font-medium text-[#8ACE00]">Free Brat Album Cover Maker</span>
-              </motion.div>
+              </div>
 
               <h1 className="font-display text-3xl sm:text-4xl lg:text-5xl font-bold leading-tight mb-4">
                 <span className="text-white">Brat Generator – </span>
@@ -149,15 +149,10 @@ export default function HomePage() {
                 Create custom images inspired by Charli XCX&apos;s iconic &quot;Brat&quot; album cover.
                 Enter your text, customize colors, and download instantly.
               </p>
-            </motion.div>
+            </div>
 
             {/* Generator Tool */}
-            <motion.div
-              className="max-w-5xl mx-auto"
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.2 }}
-            >
+            <div className="max-w-5xl mx-auto animate-fade-in-up" style={{ animationDelay: '0.15s' }}>
               <Card className="p-6 sm:p-8 lg:p-10" hover={false}>
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12">
 
@@ -361,14 +356,14 @@ export default function HomePage() {
                   </div>
                 </div>
               </Card>
-            </motion.div>
+            </div>
           </Container>
         </section>
 
-        {/* SEO Content Section */}
+        {/* SEO Content Section — lazy loaded */}
         <SEOTextSection />
 
-        {/* FAQ Section */}
+        {/* FAQ Section — lazy loaded */}
         <FAQSection />
       </main>
       <Footer />

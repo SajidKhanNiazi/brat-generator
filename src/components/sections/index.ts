@@ -1,7 +1,5 @@
-export { HeroSection } from './HeroSection'
-export { ToolPreviewSection } from './ToolPreviewSection'
-export { HowToUseSection } from './HowToUseSection'
-export { FeaturesSection } from './FeaturesSection'
-export { BenefitsSection } from './BenefitsSection'
+// Performance: Only export components actually used in pages
+// Unused components (HeroSection, ToolPreviewSection, HowToUseSection,
+// FeaturesSection, BenefitsSection) removed from bundle — files kept for future use
 export { SEOTextSection } from './SEOTextSection'
 export { FAQSection } from './FAQSection'

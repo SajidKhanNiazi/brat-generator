@@ -7,12 +7,14 @@ const displayFont = Space_Grotesk({
   subsets: ['latin'],
   variable: '--font-display',
   display: 'swap',
+  preload: true,
 })
 
 const bodyFont = DM_Sans({
   subsets: ['latin'],
   variable: '--font-body',
   display: 'swap',
+  preload: true,
 })
 
 export const metadata: Metadata = {
@@ -53,6 +55,16 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className={`${displayFont.variable} ${bodyFont.variable}`}>
+      <head>
+        {/* Preconnect to Google Fonts CDN for faster font loading */}
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+        {/* DNS prefetch for YouTube (used in SEO section video) */}
+        <link rel="dns-prefetch" href="https://www.youtube.com" />
+        <link rel="dns-prefetch" href="https://i.ytimg.com" />
+        {/* Properly sized favicon */}
+        <link rel="icon" href="/favicon.ico" sizes="32x32" />
+      </head>
       <body className="font-body text-slate-100 antialiased">
         {children}
       </body>

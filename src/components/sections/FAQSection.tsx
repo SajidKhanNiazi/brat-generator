@@ -1,7 +1,6 @@
 'use client'
 
 import { useState } from 'react'
-import { motion, AnimatePresence } from 'framer-motion'
 import { Container } from '@/components/ui/Container'
 import { ChevronDown } from 'lucide-react'
 
@@ -52,29 +51,18 @@ function FAQItem({ question, answer, isOpen, onClick }: {
         <span className="font-display font-semibold text-white group-hover:text-[#8ACE00] transition-colors pr-4">
           {question}
         </span>
-        <motion.div
-          animate={{ rotate: isOpen ? 180 : 0 }}
-          transition={{ duration: 0.2 }}
-          className="flex-shrink-0"
-        >
-          <ChevronDown className="w-5 h-5 text-slate-400" />
-        </motion.div>
+        <ChevronDown
+          className={`w-5 h-5 text-slate-400 flex-shrink-0 transition-transform duration-200 ${isOpen ? 'rotate-180' : ''}`}
+        />
       </button>
-      <AnimatePresence>
-        {isOpen && (
-          <motion.div
-            initial={{ height: 0, opacity: 0 }}
-            animate={{ height: 'auto', opacity: 1 }}
-            exit={{ height: 0, opacity: 0 }}
-            transition={{ duration: 0.2 }}
-            className="overflow-hidden"
-          >
-            <p className="pb-5 text-slate-400 leading-relaxed">
-              {answer}
-            </p>
-          </motion.div>
-        )}
-      </AnimatePresence>
+      <div
+        className={`overflow-hidden transition-all duration-200 ease-in-out ${isOpen ? 'max-h-[1000px] opacity-100' : 'max-h-0 opacity-0'
+          }`}
+      >
+        <p className="pb-5 text-slate-400 leading-relaxed">
+          {answer}
+        </p>
+      </div>
     </div>
   )
 }
@@ -85,25 +73,18 @@ export function FAQSection() {
   return (
     <section id="faq" className="py-20 scroll-mt-20">
       <Container>
-        <motion.div
-          className="text-center mb-12"
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-        >
+        <div className="text-center mb-12 animate-fade-in-up">
           <h2 className="font-display text-3xl sm:text-4xl font-bold text-white mb-4">
             FAQ About Brat Generator
           </h2>
           <p className="text-slate-400 max-w-xl mx-auto">
             Everything you need to know about using the Brat Generator
           </p>
-        </motion.div>
+        </div>
 
-        <motion.div
-          className="max-w-3xl mx-auto card-gradient backdrop-blur-sm border border-slate-700/50 rounded-2xl px-6"
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
+        <div
+          className="max-w-3xl mx-auto card-gradient backdrop-blur-sm border border-slate-700/50 rounded-2xl px-6 animate-fade-in-up"
+          style={{ animationDelay: '0.1s' }}
         >
           {faqs.map((faq, index) => (
             <FAQItem
@@ -114,7 +95,7 @@ export function FAQSection() {
               onClick={() => setOpenIndex(openIndex === index ? null : index)}
             />
           ))}
-        </motion.div>
+        </div>
       </Container>
     </section>
   )

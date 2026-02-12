@@ -1,6 +1,5 @@
 'use client'
 
-import { motion } from 'framer-motion'
 import { ReactNode } from 'react'
 
 interface ButtonProps {
@@ -11,6 +10,7 @@ interface ButtonProps {
   type?: 'button' | 'submit'
   disabled?: boolean
   className?: string
+  'aria-label'?: string
 }
 
 export function Button({
@@ -21,8 +21,9 @@ export function Button({
   type = 'button',
   disabled = false,
   className = '',
+  ...rest
 }: ButtonProps) {
-  const baseStyles = 'inline-flex items-center justify-center font-display font-semibold rounded-xl transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-slate-900'
+  const baseStyles = 'inline-flex items-center justify-center font-display font-semibold rounded-xl transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-slate-900 hover:scale-[1.02] active:scale-[0.98]'
 
   const variants = {
     primary: 'bg-gradient-to-r from-[#8ACE00] to-lime-500 hover:from-[#9de000] hover:to-lime-400 text-slate-900 focus:ring-[#8ACE00] shadow-lg shadow-[#8ACE00]/25',
@@ -37,15 +38,14 @@ export function Button({
   }
 
   return (
-    <motion.button
+    <button
       type={type}
       onClick={onClick}
       disabled={disabled}
-      className={`${baseStyles} ${variants[variant]} ${sizes[size]} ${disabled ? 'opacity-50 cursor-not-allowed' : ''} ${className}`}
-      whileHover={{ scale: disabled ? 1 : 1.02 }}
-      whileTap={{ scale: disabled ? 1 : 0.98 }}
+      className={`${baseStyles} ${variants[variant]} ${sizes[size]} ${disabled ? 'opacity-50 cursor-not-allowed hover:scale-100 active:scale-100' : ''} ${className}`}
+      {...rest}
     >
       {children}
-    </motion.button>
+    </button>
   )
 }

@@ -3,9 +3,8 @@
 import { useState } from 'react'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
-import { motion, AnimatePresence } from 'framer-motion'
 import { Container } from '@/components/ui/Container'
-import { Sparkles, Menu, X, Music } from 'lucide-react'
+import { Sparkles, Menu, X } from 'lucide-react'
 
 export function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
@@ -22,13 +21,9 @@ export function Header() {
         <nav className="flex items-center justify-between h-16">
           {/* Logo */}
           <Link href="/" className="flex items-center gap-2 group" onClick={() => setMobileMenuOpen(false)}>
-            <motion.div
-              className="p-2 rounded-lg bg-[#8ACE00]"
-              whileHover={{ rotate: 12 }}
-              transition={{ type: 'spring', stiffness: 300 }}
-            >
+            <div className="p-2 rounded-lg bg-[#8ACE00] transition-transform hover:rotate-12">
               <Sparkles className="w-4 h-4 sm:w-5 sm:h-5 text-slate-900" />
-            </motion.div>
+            </div>
             <span className="font-display font-bold text-lg sm:text-xl text-white group-hover:text-[#8ACE00] transition-all">
               Brat Generator
             </span>
@@ -43,8 +38,8 @@ export function Header() {
                   key={link.href}
                   href={link.href}
                   className={`px-4 py-2 rounded-lg font-display font-medium text-sm transition-colors ${isActive
-                      ? 'bg-[#8ACE00]/10 text-[#8ACE00]'
-                      : 'text-slate-400 hover:text-white hover:bg-slate-800'
+                    ? 'bg-[#8ACE00]/10 text-[#8ACE00]'
+                    : 'text-slate-400 hover:text-white hover:bg-slate-800'
                     }`}
                 >
                   {link.label}
@@ -67,38 +62,31 @@ export function Header() {
           </button>
         </nav>
 
-        {/* Mobile Menu */}
-        <AnimatePresence>
-          {mobileMenuOpen && (
-            <motion.div
-              initial={{ opacity: 0, height: 0 }}
-              animate={{ opacity: 1, height: 'auto' }}
-              exit={{ opacity: 0, height: 0 }}
-              transition={{ duration: 0.2 }}
-              className="md:hidden overflow-hidden border-t border-slate-800"
-            >
-              <div className="py-3 space-y-1">
-                {navLinks.map((link) => {
-                  const isActive = pathname === link.href
-                  return (
-                    <Link
-                      key={link.href}
-                      href={link.href}
-                      onClick={() => setMobileMenuOpen(false)}
-                      className={`flex items-center gap-3 px-4 py-3.5 rounded-xl font-display font-medium transition-colors min-h-[48px] ${isActive
-                          ? 'bg-[#8ACE00]/10 text-[#8ACE00]'
-                          : 'text-slate-300 hover:bg-slate-800 hover:text-white active:bg-slate-700'
-                        }`}
-                    >
-                      <span className="text-lg">{link.mobileIcon}</span>
-                      {link.label}
-                    </Link>
-                  )
-                })}
-              </div>
-            </motion.div>
-          )}
-        </AnimatePresence>
+        {/* Mobile Menu — CSS transition instead of framer-motion AnimatePresence */}
+        <div
+          className={`md:hidden overflow-hidden border-t border-slate-800 transition-all duration-200 ease-in-out ${mobileMenuOpen ? 'max-h-40 opacity-100' : 'max-h-0 opacity-0 border-t-0'
+            }`}
+        >
+          <div className="py-3 space-y-1">
+            {navLinks.map((link) => {
+              const isActive = pathname === link.href
+              return (
+                <Link
+                  key={link.href}
+                  href={link.href}
+                  onClick={() => setMobileMenuOpen(false)}
+                  className={`flex items-center gap-3 px-4 py-3.5 rounded-xl font-display font-medium transition-colors min-h-[48px] ${isActive
+                    ? 'bg-[#8ACE00]/10 text-[#8ACE00]'
+                    : 'text-slate-300 hover:bg-slate-800 hover:text-white active:bg-slate-700'
+                    }`}
+                >
+                  <span className="text-lg">{link.mobileIcon}</span>
+                  {link.label}
+                </Link>
+              )
+            })}
+          </div>
+        </div>
       </Container>
     </header>
   )

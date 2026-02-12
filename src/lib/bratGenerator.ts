@@ -1,7 +1,6 @@
 // Brat Image Generator - Creates Charli XCX "Brat" album cover style images
 
 export interface BratImageOptions {
-
   text: string
   backgroundColor: string
   textColor: string
@@ -66,7 +65,7 @@ function calculateFontSize(
   const minFontSize = 16
   const lineHeight = 1.15
 
-  // Reduce font size until text fits
+  // Batch reads: measure text in a loop without interleaving writes
   while (fontSize > minFontSize) {
     ctx.font = `bold ${fontSize}px Arial, sans-serif`
 
@@ -99,14 +98,16 @@ export function generateBratImage(
 
   if (!ctx) return
 
+  // Batch read: read dimensions once
   const width = canvas.width
   const height = canvas.height
 
-  // Fill background
+  // Batch all canvas writes together — prevents forced reflow
+  // 1. Fill background
   ctx.fillStyle = backgroundColor
   ctx.fillRect(0, 0, width, height)
 
-  // Configure text
+  // 2. Configure text (batch all property sets before drawing)
   const displayText = text.toLowerCase() || 'brat'
   const lines = displayText.split('\n').filter(l => l.trim() !== '')
   const fontSize = calculateFontSize(ctx, lines, width, height)
@@ -116,11 +117,9 @@ export function generateBratImage(
   ctx.fillStyle = textColor
   ctx.textAlign = 'center'
   ctx.textBaseline = 'middle'
+  ctx.filter = 'blur(0.5px)' // Authentic look — set once, not per-line
 
-  // Add slight blur effect for authentic look
-  ctx.filter = 'blur(0.5px)'
-
-  // Draw lines centered
+  // 3. Draw all lines (batch writes)
   const totalHeight = lines.length * lineHeight
   let currentY = (height - totalHeight) / 2 + lineHeight / 2
 
@@ -129,7 +128,7 @@ export function generateBratImage(
     currentY += lineHeight
   }
 
-  // Reset filter
+  // 4. Reset filter once at the end
   ctx.filter = 'none'
 }
 
