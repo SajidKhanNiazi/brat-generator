@@ -7,6 +7,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     const routes = [
         '',
         '/brat-lyric-generator',
+        '/brat-meme-generator',
         '/contact',
         '/privacy-policy',
         '/terms',

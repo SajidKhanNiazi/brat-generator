@@ -14,7 +14,18 @@ import {
   colorPresets,
   ColorPresetKey,
 } from '@/lib/bratGenerator'
-import { Download, Share2, Palette, Type, Sparkles, Check, Droplet, Paintbrush } from 'lucide-react'
+import {
+  Download,
+  Share2,
+  Palette,
+  Type,
+  Sparkles,
+  Check,
+  Droplet,
+  Paintbrush,
+  ChevronDown,
+} from 'lucide-react'
+import { MoreToolsSection } from '@/components/sections/MoreToolsSection'
 
 // Lazy-load below-fold sections — they don't need to block FCP/LCP
 const SEOTextSection = dynamic(
@@ -170,12 +181,12 @@ export default function HomePage() {
                         value={text}
                         onChange={(e) => setText(e.target.value)}
                         placeholder="Type your text here..."
-                        maxLength={30}
+                        maxLength={100}
                         aria-label="Enter the text for your Brat image"
                         className="w-full px-4 py-4 rounded-xl bg-slate-900/70 border border-slate-700 text-white text-xl placeholder-slate-500 focus:outline-none focus:ring-2 focus:ring-[#8ACE00] focus:border-transparent transition-all"
                       />
                       <p className="text-sm text-slate-500 mt-2">
-                        Text automatically converts to lowercase • {text.length}/30
+                        Text automatically converts to lowercase • {text.length}/100
                       </p>
                     </div>
 
@@ -365,6 +376,9 @@ export default function HomePage() {
 
         {/* FAQ Section — lazy loaded */}
         <FAQSection />
+
+        {/* ── Internal Links ── */}
+        <MoreToolsSection currentTool="generator" />
       </main>
       <Footer />
     </>

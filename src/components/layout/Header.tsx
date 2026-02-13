@@ -13,6 +13,7 @@ export function Header() {
   const navLinks = [
     { href: '/', label: 'Generator', mobileIcon: '🎨' },
     { href: '/brat-lyric-generator', label: 'Lyric Generator', mobileIcon: '🎵' },
+    { href: '/brat-meme-generator', label: 'Meme Generator', mobileIcon: '😈' },
   ]
 
   return (

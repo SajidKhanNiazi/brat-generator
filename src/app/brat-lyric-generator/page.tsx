@@ -27,6 +27,7 @@ import {
     Video,
     ArrowRight,
 } from 'lucide-react'
+import { MoreToolsSection } from '@/components/sections/MoreToolsSection'
 
 /* ─── Brat Lyrics Formatter ─── */
 
@@ -678,22 +679,7 @@ export default function BratLyricGeneratorPage() {
                 </section>
 
                 {/* ── 7. Internal Link Section ── */}
-                <section className="py-16 lg:py-20">
-                    <Container>
-                        <div className="max-w-3xl mx-auto text-center">
-                            <p className="text-slate-400 leading-relaxed mb-4 italic">
-                                Want to format normal text too? Try our
-                            </p>
-                            <Link
-                                href="/"
-                                className="inline-flex items-center gap-2 text-[#8ACE00] font-display font-semibold hover:underline transition-colors"
-                            >
-                                Brat Generator
-                                <ArrowRight className="w-4 h-4" />
-                            </Link>
-                        </div>
-                    </Container>
-                </section>
+                <MoreToolsSection currentTool="lyrics" />
             </main>
             <Footer />
         </>
