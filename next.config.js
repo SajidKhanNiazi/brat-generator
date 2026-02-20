@@ -5,9 +5,11 @@ const nextConfig = {
   compress: true,
 
   // Tree-shake large icon libraries
+  /* 
   experimental: {
     optimizePackageImports: ['lucide-react'],
   },
+  */
 
   // Cache headers for static assets
   async headers() {

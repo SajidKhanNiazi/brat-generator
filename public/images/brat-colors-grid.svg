@@ -1,0 +1,22 @@
+<svg width="1080" height="1080" viewBox="0 0 1080 1080" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <filter id="bratBlur">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="1.2" />
+    </filter>
+  </defs>
+  
+  <!-- 4-Grid of Colors -->
+  <rect x="0" y="0" width="540" height="540" fill="#FF69B4" /> <!-- Pink -->
+  <rect x="540" y="0" width="540" height="540" fill="#00BFFF" /> <!-- Blue -->
+  <rect x="0" y="540" width="540" height="540" fill="#9B59B6" /> <!-- Purple -->
+  <rect x="540" y="540" width="540" height="540" fill="#FF6B35" /> <!-- Orange -->
+  
+  <!-- Text -->
+  <text x="270" y="280" font-family="Arial, sans-serif" font-weight="bold" font-size="110" fill="black" text-anchor="middle" filter="url(#bratBlur)">brat</text>
+  <text x="810" y="280" font-family="Arial, sans-serif" font-weight="bold" font-size="110" fill="black" text-anchor="middle" filter="url(#bratBlur)">cool</text>
+  <text x="270" y="820" font-family="Arial, sans-serif" font-weight="bold" font-size="110" fill="black" text-anchor="middle" filter="url(#bratBlur)">vibe</text>
+  <text x="810" y="820" font-family="Arial, sans-serif" font-weight="bold" font-size="110" fill="black" text-anchor="middle" filter="url(#bratBlur)">neon</text>
+  
+  <!-- Subtle low-res texture simulation -->
+  <rect width="100%" height="100%" fill="black" opacity="0.03" />
+</svg>

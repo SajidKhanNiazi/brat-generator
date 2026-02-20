@@ -8,6 +8,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
         '',
         '/brat-lyric-generator',
         '/brat-meme-generator',
+        '/brat-generator-different-colors',
         '/contact',
         '/privacy-policy',
         '/terms',

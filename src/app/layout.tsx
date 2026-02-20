@@ -23,6 +23,13 @@ export const metadata: Metadata = {
   description: 'Easily create iconic Brat album cover images with our free online tool. Customize text and colors with the classic Brat green. No signup required.',
   keywords: ['brat generator', 'brat text generator', 'brat font generator', 'brat image generator', 'brat meme generator', 'charli xcx brat', 'brat album cover', 'brat green'],
   authors: [{ name: 'Brat Generator' }],
+  icons: {
+    icon: [
+      { url: '/favicon.svg', type: 'image/svg+xml' },
+      { url: '/favicon.ico', sizes: '32x32' },
+    ],
+    apple: '/apple-touch-icon.svg',
+  },
   openGraph: {
     title: 'Brat Generator – Create Charli XCX Style Brat Text Online',
     description: 'Easily create iconic Brat album cover images with our free online tool. Customize text and colors with the classic Brat green.',
@@ -63,7 +70,9 @@ export default function RootLayout({
         <link rel="dns-prefetch" href="https://www.youtube.com" />
         <link rel="dns-prefetch" href="https://i.ytimg.com" />
         {/* Properly sized favicon */}
+        <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
         <link rel="icon" href="/favicon.ico" sizes="32x32" />
+        <link rel="apple-touch-icon" href="/apple-touch-icon.svg" />
       </head>
       <body className="font-body text-slate-100 antialiased">
         {children}

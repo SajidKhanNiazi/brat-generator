@@ -1,9 +1,8 @@
-'use client'
-
+import { useState } from 'react'
 import Link from 'next/link'
 import { Card } from '@/components/ui/Card'
 import { Container } from '@/components/ui/Container'
-import { ArrowRight, Music, Type, Image as ImageIcon } from 'lucide-react'
+import { ArrowRight, Music, Type, Image as ImageIcon, Palette } from 'lucide-react'
 
 interface ToolCardProps {
     href: string
@@ -39,7 +38,7 @@ function ToolCard({ href, title, description, icon, color }: ToolCardProps) {
     )
 }
 
-export function MoreToolsSection({ currentTool }: { currentTool?: 'generator' | 'lyrics' | 'meme' }) {
+export function MoreToolsSection({ currentTool }: { currentTool?: 'generator' | 'lyrics' | 'meme' | 'colors' }) {
     const tools = [
         {
             id: 'generator',
@@ -64,6 +63,14 @@ export function MoreToolsSection({ currentTool }: { currentTool?: 'generator' | 
             description: 'Format your text like brat lyrics. Clean, lowercase, and punchy. Perfect for captions.',
             icon: <Music className="w-6 h-6 text-sky-400" />,
             color: '#38bdf8'
+        },
+        {
+            id: 'colors',
+            href: '/brat-generator-different-colors',
+            title: 'Brat Colors',
+            description: 'Go beyond green. Create custom brat-style text graphics with any color combination you want.',
+            icon: <Palette className="w-6 h-6 text-[#8ACE00]" />,
+            color: '#8ACE00'
         }
     ]
 

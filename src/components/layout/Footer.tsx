@@ -56,6 +56,9 @@ export function Footer() {
               <Link href="/" className="text-slate-400 hover:text-[#8ACE00] transition-colors py-1">
                 Generator
               </Link>
+              <Link href="/brat-generator-different-colors" className="text-slate-400 hover:text-[#8ACE00] transition-colors py-1">
+                Brat Colors
+              </Link>
             </div>
           </div>
         </div>
