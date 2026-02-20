@@ -2,9 +2,10 @@
 
 import { useState, useEffect } from 'react'
 import Link from 'next/link'
+import Image from 'next/image'
 import { usePathname } from 'next/navigation'
 import { Container } from '@/components/ui/Container'
-import { Sparkles, Menu, X } from 'lucide-react'
+import { Menu, X } from 'lucide-react'
 
 export function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
@@ -29,7 +30,7 @@ export function Header() {
           {/* Logo */}
           <Link href="/" className="flex items-center gap-2.5 group" onClick={() => setMobileMenuOpen(false)}>
             <div className="w-9 h-9 sm:w-10 sm:h-10 rounded-lg overflow-hidden flex-shrink-0 transition-transform group-hover:rotate-6">
-              <img src="/logo.svg" alt="Brat Generator Logo" className="w-full h-full" />
+              <Image src="/logo.svg" alt="Brat Generator Logo" width={40} height={40} unoptimized />
             </div>
             <span className="font-display font-bold text-lg sm:text-xl text-white group-hover:text-[#8ACE00] transition-all">
               Brat Generator

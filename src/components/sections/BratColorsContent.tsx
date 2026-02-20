@@ -4,6 +4,7 @@ import { Container } from '@/components/ui/Container'
 import { Palette, Zap, CheckCircle, Smartphone, Sparkles } from 'lucide-react'
 import { Card } from '@/components/ui/Card'
 import Link from 'next/link'
+import Image from 'next/image'
 
 export function BratColorsContent() {
     const featureCards = [
@@ -43,7 +44,7 @@ export function BratColorsContent() {
                     </h2>
                     <div className="prose prose-invert prose-lg max-w-none text-slate-400">
                         <p className="mb-6">
-                            Welcome to the ultimate destination for the <strong>brat text generator</strong> with a twist! While the iconic neon green is the heart of the brat aesthetic, sometimes you want to express your mood in a different shade. Whether you're feeling a vibrant pink, a moody blue, or a stark white, our <strong>brat style text</strong> generator has you covered.
+                            Welcome to the ultimate destination for the <strong>brat text generator</strong> with a twist! While the iconic neon green is the heart of the brat aesthetic, sometimes you want to express your mood in a different shade. Whether you&apos;re feeling a vibrant pink, a moody blue, or a stark white, our <strong>brat style text</strong> generator has you covered.
                         </p>
                         <p>
                             The <strong>Brat Generator Different Colors</strong> is a specialized version of our popular tool that focuses on the versatility of the brat aesthetic. It allows you to create high-quality, album-inspired text graphics using any color palette you can imagine. From the classic <strong>brat green text</strong> to modern <strong>pink brat text</strong>, this tool makes it easy to customize your digital presence.
@@ -56,10 +57,12 @@ export function BratColorsContent() {
                     <div className="order-2 lg:order-1 relative group">
                         <div className="absolute -inset-1 bg-gradient-to-r from-fuchsia-500 to-cyan-500 rounded-2xl blur opacity-25 group-hover:opacity-50 transition duration-1000 group-hover:duration-200"></div>
                         <div className="relative aspect-square rounded-2xl overflow-hidden bg-slate-800 border border-slate-700 shadow-2xl">
-                            <img
+                            <Image
                                 src="/images/brat-colors-grid.svg"
                                 alt="Grid of colorful brat text squares in various vibrant colors"
-                                className="w-full h-full object-cover"
+                                fill
+                                className="object-cover"
+                                unoptimized
                             />
                         </div>
                         <p className="text-center text-sm text-slate-500 mt-4 italic">
@@ -137,10 +140,12 @@ export function BratColorsContent() {
                     <div className="relative group">
                         <div className="absolute -inset-1 bg-gradient-to-r from-cyan-500 to-fuchsia-500 rounded-2xl blur opacity-25 group-hover:opacity-50 transition duration-1000 group-hover:duration-200"></div>
                         <div className="relative aspect-video rounded-2xl overflow-hidden bg-slate-800 border border-slate-700 shadow-2xl">
-                            <img
+                            <Image
                                 src="/images/brat-colors-hero.svg"
                                 alt="High resolution pink brat style text graphic"
-                                className="w-full h-full object-cover"
+                                fill
+                                className="object-cover"
+                                unoptimized
                             />
                         </div>
                     </div>
