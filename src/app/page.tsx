@@ -832,7 +832,7 @@ export default function HomePage() {
                     <h3 className="text-xl font-bold text-white mb-2 flex items-center">Resource Efficiency</h3>
                   </div>
                   <p className="text-slate-400 text-sm leading-relaxed flex-grow">
-                    The Resource Efficiency Icon highlights how Brat generator anomali is a lightweight tool that runs smoothly in a browser without using the device's memory or slowing down the machine. It uses no resources but delivers quality work.
+                    The Resource Efficiency Icon highlights how Brat generator anomali is a lightweight tool that runs smoothly in a browser without using the device&apos;s memory or slowing down the machine. It uses no resources but delivers quality work.
                   </p>
                 </div>
 

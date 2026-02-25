@@ -32,13 +32,14 @@ export function YouTubeVideo({ videoId, title = 'Brat Generator Demo' }: YouTube
             aria-label={`Play ${title} video`}
         >
             {/* Thumbnail */}
-            <img
+            <Image
                 src={thumbnailUrl}
                 alt={`${title} Video Thumbnail`}
                 className="w-full h-full object-cover"
                 loading="lazy"
                 width={480}
                 height={360}
+                unoptimized
             />
             {/* Dark overlay */}
             <span className="absolute inset-0 bg-black/30 group-hover:bg-black/20 transition-colors block" />
