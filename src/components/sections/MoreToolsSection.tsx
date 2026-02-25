@@ -1,4 +1,3 @@
-import { useState } from 'react'
 import Link from 'next/link'
 import { Card } from '@/components/ui/Card'
 import { Container } from '@/components/ui/Container'

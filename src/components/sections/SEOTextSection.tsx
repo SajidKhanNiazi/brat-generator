@@ -1,58 +1,12 @@
 'use client'
 
-import { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import { Container } from '@/components/ui/Container'
 import { Sparkles, Palette, Zap, Download, Share2, Smartphone, Clock } from 'lucide-react'
 import { Card } from '@/components/ui/Card'
 import Image from 'next/image'
+import { YouTubeVideo } from '@/components/ui/YouTubeVideo'
 
-/* ── YouTube Facade Component ── */
-function YouTubeFacade({ videoId }: { videoId: string }) {
-    const [loaded, setLoaded] = useState(false)
-    const thumbnailUrl = `https://i.ytimg.com/vi/${videoId}/hqdefault.jpg`
-
-    if (loaded) {
-        return (
-            <iframe
-                src={`https://www.youtube.com/embed/${videoId}?autoplay=1`}
-                title="Brat Generator Demo"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                allowFullScreen
-                loading="lazy"
-                className="absolute inset-0 w-full h-full"
-            />
-        )
-    }
-
-    return (
-        <button
-            onClick={() => setLoaded(true)}
-            className="absolute inset-0 w-full h-full cursor-pointer group bg-slate-900"
-            aria-label="Play Brat Generator demo video"
-        >
-            {/* Thumbnail */}
-            <Image
-                src={thumbnailUrl}
-                alt="Brat Generator Demo Video Thumbnail"
-                className="w-full h-full object-cover"
-                loading="lazy"
-                width={480}
-                height={360}
-                unoptimized
-            />
-            {/* Dark overlay */}
-            <div className="absolute inset-0 bg-black/30 group-hover:bg-black/20 transition-colors" />
-            {/* Play button */}
-            <div className="absolute inset-0 flex items-center justify-center">
-                <div className="w-16 h-16 sm:w-20 sm:h-20 rounded-full bg-red-600 group-hover:bg-red-500 transition-colors flex items-center justify-center shadow-2xl">
-                    <svg className="w-7 h-7 sm:w-9 sm:h-9 text-white ml-1" fill="currentColor" viewBox="0 0 24 24">
-                        <path d="M8 5v14l11-7z" />
-                    </svg>
-                </div>
-            </div>
-        </button>
-    )
-}
 
 export function SEOTextSection() {
     const iconCards = [
@@ -171,12 +125,13 @@ export function SEOTextSection() {
                         {/* YouTube Facade — loads iframe only on click */}
                         <div className="max-w-3xl mx-auto">
                             <div className="relative aspect-video rounded-xl overflow-hidden bg-slate-900 shadow-2xl ring-1 ring-white/10">
-                                <YouTubeFacade videoId="-dPbs5lounM" />
+                                <YouTubeVideo videoId="-dPbs5lounM" />
                             </div>
-                            <p className="text-center text-xs text-slate-500 mt-4 italic">
+                            <p className="text-center text-sm text-slate-500 mt-4 italic">
                                 Watch the quick video demo above to see how it works!
                             </p>
                         </div>
+
                     </Card>
                 </div>
 

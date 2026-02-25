@@ -169,7 +169,7 @@ export default function BratMemeGeneratorPage() {
                             </div>
 
                             <h1 className="font-display text-3xl sm:text-4xl lg:text-5xl font-bold leading-tight mb-4">
-                                <span className="text-white">Brat Meme Generator – </span>
+                                <span className="text-white">Brat Meme Generator - </span>
                                 <span className="bg-clip-text text-transparent bg-gradient-to-r from-[#8ACE00] via-lime-400 to-green-400">
                                     Create Viral Meme Images in Seconds
                                 </span>
@@ -337,25 +337,27 @@ export default function BratMemeGeneratorPage() {
                                                     </>
                                                 )}
                                             </Button>
-                                            <Button
-                                                onClick={handleShare}
-                                                variant="secondary"
-                                                size="lg"
-                                                className="flex-1"
-                                                aria-label={canShare ? 'Share your Brat meme image' : 'Copy Brat meme image to clipboard'}
-                                            >
-                                                {copied ? (
-                                                    <>
-                                                        <Check className="w-5 h-5 mr-2" />
-                                                        Copied!
-                                                    </>
-                                                ) : (
-                                                    <>
-                                                        <Share2 className="w-5 h-5 mr-2" />
-                                                        {canShare ? 'Share' : 'Copy Image'}
-                                                    </>
-                                                )}
-                                            </Button>
+                                            <div suppressHydrationWarning>
+                                                <Button
+                                                    onClick={handleShare}
+                                                    variant="secondary"
+                                                    size="lg"
+                                                    className="flex-1 w-full"
+                                                    aria-label="Share or copy your Brat meme image"
+                                                >
+                                                    {copied ? (
+                                                        <>
+                                                            <Check className="w-5 h-5 mr-2" />
+                                                            Copied!
+                                                        </>
+                                                    ) : (
+                                                        <>
+                                                            <Share2 className="w-5 h-5 mr-2" />
+                                                            <span suppressHydrationWarning>{canShare ? 'Share' : 'Copy Image'}</span>
+                                                        </>
+                                                    )}
+                                                </Button>
+                                            </div>
                                         </div>
                                     </div>
 

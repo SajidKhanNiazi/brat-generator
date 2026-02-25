@@ -66,7 +66,7 @@ export function Footer() {
         {/* Bottom Section */}
         <div className="pt-6 border-t border-slate-800 space-y-2 text-center">
           <p className="text-xs text-slate-500 leading-relaxed">
-            © {currentYear} Brat Generator
+            © <span suppressHydrationWarning>{currentYear}</span> Brat Generator
           </p>
           <p className="text-xs text-slate-500">
             Not affiliated with Charli XCX

@@ -1,6 +1,6 @@
 'use client'
 
-import { useState, useEffect } from 'react'
+import { useState } from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
 import { usePathname } from 'next/navigation'
@@ -9,12 +9,7 @@ import { Menu, X } from 'lucide-react'
 
 export function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
-  const [mounted, setMounted] = useState(false)
   const pathname = usePathname()
-
-  useEffect(() => {
-    setMounted(true)
-  }, [])
 
   const navLinks = [
     { href: '/', label: 'Generator', mobileIcon: '🎨' },
@@ -40,7 +35,7 @@ export function Header() {
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center gap-1">
             {navLinks.map((link) => {
-              const isActive = mounted && pathname === link.href
+              const isActive = pathname === link.href
               return (
                 <Link
                   key={link.href}
@@ -77,7 +72,7 @@ export function Header() {
         >
           <div className="py-3 space-y-1">
             {navLinks.map((link) => {
-              const isActive = mounted && pathname === link.href
+              const isActive = pathname === link.href
               return (
                 <Link
                   key={link.href}

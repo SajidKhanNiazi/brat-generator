@@ -1,6 +1,6 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
 
 :root {
   --gradient-start: #0f0f23;
@@ -24,6 +24,7 @@ body {
     opacity: 0;
     transform: translateY(20px);
   }
+
   to {
     opacity: 1;
     transform: translateY(0);
@@ -31,8 +32,13 @@ body {
 }
 
 @keyframes fadeIn {
-  from { opacity: 0; }
-  to { opacity: 1; }
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
 }
 
 @layer utilities {
@@ -112,4 +118,80 @@ input[type="color"]::-moz-color-swatch {
   border: none;
   border-radius: 0.75rem;
   box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.1);
+}
+
+/* ── Brat Range Slider ── */
+input[type="range"].brat-slider {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 100%;
+  height: 6px;
+  border-radius: 3px;
+  background: #2a2a2a;
+  outline: none;
+  cursor: pointer;
+}
+
+input[type="range"].brat-slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: #8ACE00;
+  cursor: pointer;
+  box-shadow: 0 2px 6px rgba(138, 206, 0, 0.35);
+  border: none;
+}
+
+input[type="range"].brat-slider::-moz-range-thumb {
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: #8ACE00;
+  cursor: pointer;
+  box-shadow: 0 2px 6px rgba(138, 206, 0, 0.35);
+  border: none;
+}
+
+input[type="range"].brat-slider::-moz-range-progress {
+  background: #8ACE00;
+  height: 6px;
+  border-radius: 3px;
+}
+
+/* ── Chip Row: hide scrollbar ── */
+.chips-scroll::-webkit-scrollbar {
+  display: none;
+}
+
+.chips-scroll {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* ── Chip row fade edges ── */
+.chips-container {
+  position: relative;
+}
+
+.chips-container::before,
+.chips-container::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 24px;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.chips-container::before {
+  left: 0;
+  background: linear-gradient(to right, rgba(15, 15, 35, 1) 0%, transparent 100%);
+}
+
+.chips-container::after {
+  right: 0;
+  background: linear-gradient(to left, rgba(15, 15, 35, 1) 0%, transparent 100%);
 }

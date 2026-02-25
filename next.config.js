@@ -11,7 +11,6 @@ const nextConfig = {
   },
   */
 
-  // Cache headers for static assets
   async headers() {
     return [
       {

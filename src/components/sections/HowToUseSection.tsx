@@ -1,9 +1,11 @@
 'use client'
 
+import React from 'react'
 import { motion } from 'framer-motion'
 import { Container } from '@/components/ui/Container'
 import { Card } from '@/components/ui/Card'
 import { Type, Palette, Download } from 'lucide-react'
+import { YouTubeVideo } from '@/components/ui/YouTubeVideo'
 
 const steps = [
   {
@@ -71,7 +73,22 @@ export function HowToUseSection() {
             </Card>
           ))}
         </div>
+
+        {/* YouTube Video Demo */}
+        <div className="mt-20 animate-fade-in-up" style={{ animationDelay: '0.4s' }}>
+          <div className="max-w-3xl mx-auto">
+            <div className="relative aspect-video rounded-2xl overflow-hidden bg-slate-900 shadow-2xl ring-1 ring-white/10 group">
+              <YouTubeVideo videoId="-dPbs5lounM" />
+            </div>
+            <p className="text-center text-sm text-slate-500 mt-4 italic">
+              Watch our quick video guide to master the Brat aesthetic!
+            </p>
+          </div>
+        </div>
       </Container>
+
+
+
     </section>
   )
 }

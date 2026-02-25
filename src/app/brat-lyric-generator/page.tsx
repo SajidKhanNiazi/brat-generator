@@ -416,21 +416,21 @@ export default function BratLyricGeneratorPage() {
                                                     )}
                                                     Download Image
                                                 </Button>
-                                                <Button
-                                                    onClick={handleShare}
-                                                    variant="outline"
-                                                    className="flex-1"
-                                                    disabled={!inputText.trim()}
-                                                >
-                                                    {copied ? (
-                                                        <Check className="w-4 h-4 mr-2" />
-                                                    ) : canShare ? (
-                                                        <Share2 className="w-4 h-4 mr-2" />
-                                                    ) : (
-                                                        <Check className="w-4 h-4 mr-2" />
-                                                    )}
-                                                    {copied ? 'Copied!' : canShare ? 'Share' : 'Copy'}
-                                                </Button>
+                                                <div suppressHydrationWarning>
+                                                    <Button
+                                                        onClick={handleShare}
+                                                        variant="outline"
+                                                        className="flex-1 w-full"
+                                                        disabled={!inputText.trim()}
+                                                    >
+                                                        {copied ? (
+                                                            <Check className="w-4 h-4 mr-2" />
+                                                        ) : (
+                                                            <Share2 className="w-4 h-4 mr-2" />
+                                                        )}
+                                                        <span suppressHydrationWarning>{copied ? 'Copied!' : canShare ? 'Share' : 'Copy'}</span>
+                                                    </Button>
+                                                </div>
                                             </div>
 
                                             <button

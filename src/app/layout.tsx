@@ -1,5 +1,5 @@
 import type { Metadata } from 'next'
-import { Space_Grotesk, DM_Sans } from 'next/font/google'
+import { Space_Grotesk, DM_Sans, Syne, Space_Mono } from 'next/font/google'
 import './globals.css'
 
 
@@ -17,8 +17,24 @@ const bodyFont = DM_Sans({
   preload: true,
 })
 
+const syneFont = Syne({
+  subsets: ['latin'],
+  variable: '--font-syne',
+  display: 'swap',
+})
+
+const monoFont = Space_Mono({
+  weight: ['400', '700'],
+  subsets: ['latin'],
+  variable: '--font-mono',
+  display: 'swap',
+})
+
 export const metadata: Metadata = {
   metadataBase: new URL('https://brat-generator.work'),
+  alternates: {
+    canonical: '/',
+  },
   title: 'Brat Generator – Create Charli XCX Style Brat Text Online',
   description: 'Easily create iconic Brat album cover images with our free online tool. Customize text and colors with the classic Brat green. No signup required.',
   keywords: ['brat generator', 'brat text generator', 'brat font generator', 'brat image generator', 'brat meme generator', 'charli xcx brat', 'brat album cover', 'brat green'],
@@ -61,7 +77,7 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en" className={`${displayFont.variable} ${bodyFont.variable}`}>
+    <html lang="en" className={`${displayFont.variable} ${bodyFont.variable} ${syneFont.variable} ${monoFont.variable}`}>
       <head>
         {/* Preconnect to Google Fonts CDN for faster font loading */}
         <link rel="preconnect" href="https://fonts.googleapis.com" />
