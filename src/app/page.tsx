@@ -47,6 +47,7 @@ import {
 } from 'lucide-react'
 import { MoreToolsSection } from '@/components/sections/MoreToolsSection'
 import { FAQSection } from '@/components/sections/FAQSection'
+import { BlogSection } from '@/components/sections/BlogSection'
 import { YouTubeVideo } from '@/components/ui/YouTubeVideo'
 
 const PRESET_CHIPS = ['brat summer', 'that girl', 'party girl', 'main character', 'ur so julia'] as const
@@ -988,6 +989,7 @@ export default function HomePage() {
           </Container>
         </section >
 
+        <BlogSection />
         <FAQSection />
 
         {/* ── Internal Links ── */}

@@ -1,7 +1,9 @@
+'use client'
+
 import Link from 'next/link'
 import { Card } from '@/components/ui/Card'
 import { Container } from '@/components/ui/Container'
-import { ArrowRight, Music, Type, Image as ImageIcon, Palette } from 'lucide-react'
+import { ArrowRight, Music, Type, Image as ImageIcon, Palette, BookOpen } from 'lucide-react'
 
 interface ToolCardProps {
     href: string
@@ -69,6 +71,14 @@ export function MoreToolsSection({ currentTool }: { currentTool?: 'generator' | 
             title: 'Brat Colors',
             description: 'Go beyond green. Create custom brat-style text graphics with any color combination you want.',
             icon: <Palette className="w-6 h-6 text-[#8ACE00]" />,
+            color: '#8ACE00'
+        },
+        {
+            id: 'blog',
+            href: '/blog',
+            title: 'Brat Blog',
+            description: 'Discover tips, tricks, and guides on how to master the Brat aesthetic for your social media.',
+            icon: <BookOpen className="w-6 h-6 text-[#8ACE00]" />,
             color: '#8ACE00'
         }
     ]

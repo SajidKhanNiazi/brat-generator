@@ -16,6 +16,7 @@ export function Header() {
     { href: '/brat-lyric-generator', label: 'Lyric Generator', mobileIcon: '🎵' },
     { href: '/brat-meme-generator', label: 'Meme Generator', mobileIcon: '😈' },
     { href: '/brat-generator-different-colors', label: 'Brat Colors', mobileIcon: '🌈' },
+    { href: '/blog', label: 'Blog', mobileIcon: '📝' },
   ]
 
   return (
