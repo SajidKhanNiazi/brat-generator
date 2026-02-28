@@ -34,8 +34,37 @@ export default function BratImageGuidePost() {
 
             <div className="bg-[#8ACE00]/10 border-l-4 border-[#8ACE00] p-5 sm:p-8 my-8 rounded-r-2xl">
                 <p className="!mb-0 text-white font-medium italic text-base sm:text-lg">
-                    "That’s where a brat generator for instagram becomes your secret weapon. It follows a viral trend that is changing how content appears on feeds."
+                    &ldquo;That&apos;s where a brat generator for instagram becomes your secret weapon. It follows a viral trend that is changing how content appears on feeds.&rdquo;
                 </p>
+            </div>
+
+            <div className="my-14 relative group">
+                <div className="absolute -inset-1 bg-gradient-to-r from-[#8ACE00] via-fuchsia-400 to-[#8ACE00] rounded-3xl blur opacity-25 group-hover:opacity-75 transition duration-1000 group-hover:duration-200 animate-tilt"></div>
+                <div className="relative p-1 rounded-3xl bg-slate-900 border border-slate-800 shadow-2xl overflow-hidden">
+                    <div className="absolute top-0 right-0 w-32 h-32 bg-[#8ACE00]/10 rounded-full -mr-16 -mt-16 blur-3xl"></div>
+                    <div className="absolute bottom-0 left-0 w-32 h-32 bg-fuchsia-400/10 rounded-full -ml-16 -mb-16 blur-3xl"></div>
+
+                    <div className="relative p-8 text-center sm:p-12">
+                        <span className="inline-block px-3 py-1 mb-4 text-xs font-bold tracking-widest text-[#8ACE00] uppercase bg-[#8ACE00]/10 rounded-full">
+                            Viral Tool
+                        </span>
+                        <h3 className="text-white text-3xl sm:text-4xl font-black mb-6 !mt-0 leading-tight">
+                            Ready to go viral with your own <span className="text-[#8ACE00]">Brat style on Instagram?</span>
+                        </h3>
+                        <p className="text-slate-300 text-lg mb-10 max-w-xl mx-auto leading-relaxed">
+                            Stop scrolling and start creating. Join the trend and generate your own high-quality Brat aesthetic images for Instagram in seconds.
+                        </p>
+                        <Link
+                            href="/"
+                            className="inline-flex items-center justify-center px-10 py-5 text-xl font-black !text-black bg-[#8ACE00] rounded-full hover:bg-white transition-all hover:scale-105 shadow-[0_0_30px_rgba(138,206,0,0.5)] group-hover:shadow-[0_0_50px_rgba(138,206,0,0.7)]"
+                        >
+                            Start Generating for Instagram Now
+                        </Link>
+                        <p className="mt-6 text-slate-500 text-sm font-medium">
+                            No sign-up required &bull; 100% Free &bull; High-Res Export
+                        </p>
+                    </div>
+                </div>
             </div>
 
             <h2 className="!text-fuchsia-400 !not-italic !text-2xl sm:!text-3xl">Brat Image Generator: Unleash Your Bold Vibe</h2>
@@ -72,7 +101,7 @@ export default function BratImageGuidePost() {
                 Even on platforms like X, <Link href="/brat-meme-generator"><strong>brat memes</strong></Link> grab massive engagement. People love it because it feels <strong>real, bold, funny, and confident</strong>.
             </p>
 
-            <h2 className="!text-[#8ACE00] !not-italic !text-2xl sm:!text-3xl">Key Features You'll Love</h2>
+            <h2 className="!text-[#8ACE00] !not-italic !text-2xl sm:!text-3xl">Key Features You&apos;ll Love</h2>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 my-8">
                 <div className="p-4 rounded-xl bg-slate-900/40 border border-slate-800">
                     <h3 className="text-white font-bold flex items-center gap-2 mb-2">
@@ -200,7 +229,7 @@ export default function BratImageGuidePost() {
 
             <h3 className="text-yellow-400 !not-italic !text-xl sm:!text-2xl">Common Problems & Solutions</h3>
             <p>
-                If the image is not showing, check the <strong>text input box</strong>. If download buttons aren't working, check your <strong>browser settings</strong> and allow downloads. You can also use <strong>hex codes</strong> for custom colors.
+                If the image is not showing, check the <strong>text input box</strong>. If download buttons aren&apos;t working, check your <strong>browser settings</strong> and allow downloads. You can also use <strong>hex codes</strong> for custom colors.
             </p>
 
             <h2 className="!text-[#8ACE00] !not-italic !text-2xl sm:!text-3xl">Free Brat Generator Suite</h2>
@@ -211,7 +240,7 @@ export default function BratImageGuidePost() {
             <div className="space-y-8 my-8">
                 <div>
                     <h3 className="text-white font-bold text-lg sm:text-xl mb-3">What is a Brat image and why is it popular on Instagram?</h3>
-                    <p className="text-slate-400 !m-0">A Brat image is a bold, minimalist graphic featuring blurry or smudged text on a bright lime green background, inspired by Charli XCX's Brat album cover. It went viral on Instagram because of its edgy, effortless aesthetic that feels both chaotic and cool.</p>
+                    <p className="text-slate-400 !m-0">A Brat image is a bold, minimalist graphic featuring blurry or smudged text on a bright lime green background, inspired by Charli XCX&apos;s Brat album cover. It went viral on Instagram because of its edgy, effortless aesthetic that feels both chaotic and cool.</p>
                 </div>
                 <div>
                     <h3 className="text-white font-bold text-lg sm:text-xl mb-3">How do I make a Brat image for Instagram?</h3>
