@@ -10,6 +10,15 @@ import Link from 'next/link'
 
 const posts = [
     {
+        title: "Brat Image for TikTok Story — How to Create the Perfect Brat Aesthetic Story",
+        description: "If you want to create a strong brat image for a tiktok story, you must think in vertical format first. TikTok Stories use a 9:16 ratio...",
+        href: "/blog/how-to-make-a-brat-image-for-tiktok-story",
+        date: "February 28, 2026",
+        author: "Brat Admin",
+        readTime: "4 min read",
+        category: "TikTok Guide"
+    },
+    {
         title: "How to Make a Brat Image for Instagram — Square, Story & Carousel Guide",
         description: "Creating the perfect brat image instagram post is not just about adding text on a photo. It is about using the right size, colors, and mood...",
         href: "/blog/how-to-make-a-brat-image-for-instagram",

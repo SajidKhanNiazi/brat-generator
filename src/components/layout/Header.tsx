@@ -68,7 +68,7 @@ export function Header() {
 
         {/* Mobile Menu — CSS transition instead of framer-motion AnimatePresence */}
         <div
-          className={`md:hidden overflow-hidden border-t border-slate-800 transition-all duration-200 ease-in-out ${mobileMenuOpen ? 'max-h-64 opacity-100' : 'max-h-0 opacity-0 border-t-0'
+          className={`md:hidden overflow-hidden border-t border-slate-800 transition-all duration-200 ease-in-out ${mobileMenuOpen ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0 border-t-0'
             }`}
         >
           <div className="py-3 space-y-1">
